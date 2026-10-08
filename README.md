@@ -1,0 +1,1 @@
+# Digerati Show Portal\n\nStatic site. One folder per show. Deployed by Cloudflare Pages from this repo (no build step, output directory `/`). Protected with Cloudflare Access.\n

@@ -1,0 +1,1610 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style></head><body><title>NP Chicago Crew Book</title>
+<link id="gf" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<script id="jszip" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style id="app-css">
+/* Layout: road-case show book. Sticky header, left rail of departments (top chip bar on phones), one section on screen at a time. */
+:root{
+  --bg:#F1F3F7; --surface:#FFFFFF; --surface-2:#F7F8FB; --ink:#161A2C; --muted:#5A6272; --line:#DADFE7;
+  --accent:#28519D; --accent-ink:#FFFFFF; --accent-soft:#E3ECFA;
+  --ok:#17795F; --ok-soft:#DDF3EC; --warn:#A8560B; --warn-soft:#FBEBD9; --crit:#BE2F5B; --crit-soft:#FBE1E9;
+  --band:#161A2C; --band-ink:#F1F3F7; --band-muted:#A9B0C2;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:8px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1120; --surface:#161A2B; --surface-2:#1B2034; --ink:#E7EAF2; --muted:#9AA2B4; --line:#2A3046;
+  --accent:#86A9F2; --accent-ink:#0E1120; --accent-soft:#1E2A4A;
+  --ok:#55C9A6; --ok-soft:#14302A; --warn:#EBA457; --warn-soft:#3A2814; --crit:#F27A9F; --crit-soft:#3C1A27;
+  --band:#090B16; --band-ink:#E7EAF2; --band-muted:#8D95A9; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1120; --surface:#161A2B; --surface-2:#1B2034; --ink:#E7EAF2; --muted:#9AA2B4; --line:#2A3046;
+  --accent:#86A9F2; --accent-ink:#0E1120; --accent-soft:#1E2A4A;
+  --ok:#55C9A6; --ok-soft:#14302A; --warn:#EBA457; --warn-soft:#3A2814; --crit:#F27A9F; --crit-soft:#3C1A27;
+  --band:#090B16; --band-ink:#E7EAF2; --band-muted:#8D95A9; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:var(--body);font-size:15px;line-height:1.5}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num,.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* header */
+.band{background:var(--band);color:var(--band-ink);padding-block:18px 16px;padding-inline:20px}
+.band-in{max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--band-muted)}
+.band h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,44px);line-height:1;margin:4px 0 6px;letter-spacing:.01em;text-wrap:balance}
+.band .sub{color:var(--band-muted);font-size:14px}
+.band .sub b{color:var(--band-ink);font-weight:500}
+.count{display:flex;gap:18px;align-items:flex-end}
+.count .k{font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--band-muted)}
+.count .v{font-family:var(--display);font-weight:700;font-size:30px;line-height:1}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:6px 11px;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.ghost{background:transparent}
+.band .btn{background:transparent;color:var(--band-ink);border-color:#3A4160}
+.band .btn.primary{background:var(--band-ink);color:var(--band);border-color:var(--band-ink)}
+.btn svg{width:15px;height:15px;flex:none}
+
+/* shell */
+.shell{max-width:1320px;margin:0 auto;padding-inline:20px;padding-block:20px 60px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px}
+nav.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);align-self:start;display:flex;flex-direction:column;gap:2px}
+nav.rail .grp{font-family:var(--display);text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--muted);margin:14px 10px 4px}
+nav.rail .grp:first-child{margin-top:0}
+nav.rail a{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:6px;text-decoration:none;color:var(--ink);font-weight:500}
+nav.rail a:hover{background:var(--surface)}
+nav.rail a[aria-current="true"]{background:var(--accent);color:var(--accent-ink)}
+nav.rail a .pill{font-size:11px}
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:16px;padding-block:0 60px}
+  nav.rail{flex-direction:row;overflow-x:auto;gap:6px;padding-block:10px;margin-inline:-20px;padding-inline:20px;background:var(--bg);z-index:5;top:env(safe-area-inset-top,0px);border-bottom:1px solid var(--line)}
+  nav.rail .grp{display:none}
+  nav.rail a{white-space:nowrap;border:1px solid var(--line);background:var(--surface);padding:5px 10px;font-size:14px}
+}
+main{min-width:0}
+.sechead{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:flex-end;justify-content:space-between;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.sechead h2{font-family:var(--display);font-weight:700;font-size:32px;line-height:1;margin:0;text-transform:uppercase;letter-spacing:.02em}
+.sechead p{margin:6px 0 0;color:var(--muted);max-width:70ch}
+h3{font-family:var(--display);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.12em;margin:28px 0 10px;color:var(--ink)}
+h3:first-child{margin-top:0}
+.stack{display:flex;flex-direction:column;gap:20px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;min-width:0}
+.card h4{margin:0 0 8px;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.01em}
+.kv{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 14px;margin:0}
+.kv dt{color:var(--muted);font-size:13px;padding-top:1px}
+.kv dd{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.pill.src{background:var(--surface-2);border-color:var(--line);color:var(--ink);font-weight:500}
+.pill.crit{background:var(--crit-soft);color:var(--crit)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.info{background:var(--accent-soft);color:var(--accent)}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-family:var(--display);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--surface-2);white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.q{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;width:56px;font-weight:600}
+td.sub{color:var(--muted);font-size:13px}
+td.mono{white-space:nowrap}
+tr.grouprow td{background:var(--surface-2);font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted)}
+.tw input,.tw select{width:100%;min-width:90px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:4px 6px;font:inherit;font-size:13px}
+.tw input.qty{min-width:50px;width:60px;text-align:right}
+.rm{border:0;background:none;color:var(--crit);cursor:pointer;font-size:18px;line-height:1;padding:2px 6px}
+
+/* schedule */
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.day .d{font-family:var(--display);font-weight:700;font-size:22px;line-height:1}
+.day .w{font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted)}
+.day .t{font-weight:600}
+.day.show{border-color:var(--accent);box-shadow:inset 0 3px 0 var(--accent)}
+.day ul{margin:4px 0 0;padding-left:16px;font-size:13px;color:var(--muted)}
+
+/* gallery */
+.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.shot{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px;cursor:zoom-in;text-align:left;min-width:0}
+.shot:hover{border-color:var(--accent)}
+.shot .img{aspect-ratio:3/2;max-width:100%;background:#0b0d16;border-radius:5px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.shot.wide .img{aspect-ratio:16/5}
+.shot img{width:100%;height:100%;object-fit:contain}
+.shot .cap{display:flex;justify-content:space-between;gap:8px;padding:0 4px 2px;align-items:baseline}
+.shot .cap b{font-weight:600}
+.hero-shot{cursor:zoom-in;display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#0b0d16}
+.hero-shot img{display:block;width:100%}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(6,8,16,.96);z-index:50;display:flex;flex-direction:column;color:#EEF0F6}
+.lb-top{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 10px}
+.lb-top .t{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.02em;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-top .btn{background:transparent;color:#EEF0F6;border-color:#3A4160}
+.lb-stage{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:0 16px calc(env(safe-area-inset-bottom,0px) + 16px)}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;background:#fff}
+.lb-stage.actual{display:block}
+.lb-stage.actual img{max-width:none;max-height:none}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(20,24,40,.8);border:1px solid #3A4160;color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:20px}
+.lb-prev{left:12px}.lb-next{right:12px}
+
+/* issues */
+.issue{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.issue .sev{width:4px;align-self:stretch;border-radius:2px;background:var(--line)}
+.issue.high .sev{background:var(--crit)}.issue.med .sev{background:var(--warn)}.issue.low .sev{background:var(--muted)}
+.issue.resolved{opacity:.6}
+.issue .title{font-weight:600}
+.issue .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.issue p{margin:2px 0 0;color:var(--muted);font-size:14px;max-width:80ch}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 11px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* LED */
+.surf{display:grid;grid-template-columns:13.12fr 59.06fr 13.12fr;gap:6px;align-items:start;margin:4px 0 6px}
+.surf div{border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;padding:6px;min-width:0;overflow:hidden}
+.surf .side{aspect-ratio:4000/4500}
+.surf .main{aspect-ratio:18000/4000}
+.surf b{font-family:var(--display);font-size:15px;letter-spacing:.03em}
+.surf .num{font-size:11px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px}
+.flow .n{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:6px 10px}
+.flow .a{color:var(--muted)}
+
+/* swatches */
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.sw .c{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface);cursor:pointer;text-align:left;padding:0}
+.sw .c i{display:block;height:54px}
+.sw .c span{display:block;padding:6px 9px;font-size:12px}
+.files{display:flex;flex-direction:column;gap:8px}
+.file{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px}
+.file b{font-weight:600}
+.file .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+
+/* map */
+.mapbox{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.mapbox svg{display:block;width:100%;height:auto}
+
+/* edit bar + toast */
+.editbar{position:sticky;bottom:0;z-index:20;background:var(--ink);color:var(--bg);padding:10px 16px calc(env(safe-area-inset-bottom,0px) + 10px);display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.editbar .btn{background:transparent;color:var(--bg);border-color:var(--muted)}
+.editbar .btn.primary{background:var(--bg);color:var(--ink)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 70px);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;font-size:14px;z-index:60}
+.note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 6px 6px 0;font-size:14px}
+.upd{display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.upd:last-child{border-bottom:0}
+textarea.ed{width:100%;min-height:60px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:6px;font:inherit}
+@media (prefers-reduced-motion:no-preference){.btn,.shot,nav.rail a{transition:border-color .15s,background-color .15s}}
+</style>
+<div id="app"></div>
+<script type="application/json" id="show-data">
+{
+ "shareUrl": "",
+ "show": {
+  "client": "Nixon Peabody",
+  "event": "All-Attorney Meeting",
+  "venue": "Hyatt Regency Chicago",
+  "room": "Grand Ballroom",
+  "address": "151 E Wacker Dr, Chicago, IL 60601",
+  "inhouse": "Tallen (SO# 551963) — CAD v5 by Matt Waldner, 8/27/26",
+  "eic": "Trevor Zulinke",
+  "office": "Digerati Productions · 866-222-7750",
+  "loadIn": "2026-10-14T08:00:00-05:00"
+ },
+ "schedule": [
+  {
+   "date": "2026-10-07",
+   "label": "Prep",
+   "kind": "prep",
+   "items": [
+    "Gig Rent LED prep begins 1:00 PM (Orlando)"
+   ]
+  },
+  {
+   "date": "2026-10-08",
+   "label": "Pickups",
+   "kind": "prep",
+   "items": [
+    "Rentex will call 9–11 AM (GLP X4)",
+    "PRG will call 3:00 PM (cable)",
+    "Immense AV rental starts (Diablo S)"
+   ]
+  },
+  {
+   "date": "2026-10-13",
+   "label": "Travel",
+   "kind": "travel",
+   "items": [
+    "Crew travel, 8 AM–5 PM",
+    "E2 operator travels"
+   ]
+  },
+  {
+   "date": "2026-10-14",
+   "label": "Set",
+   "kind": "work",
+   "items": [
+    "Call 8:00 AM",
+    "Crew 8 AM–10 PM"
+   ]
+  },
+  {
+   "date": "2026-10-15",
+   "label": "Set / Rehearse",
+   "kind": "work",
+   "items": [
+    "Call 6:00 AM",
+    "Crew 6 AM–4 PM"
+   ]
+  },
+  {
+   "date": "2026-10-16",
+   "label": "Show",
+   "kind": "show",
+   "items": [
+    "Call 8:00 AM",
+    "Crew 8 AM–6 PM"
+   ]
+  },
+  {
+   "date": "2026-10-17",
+   "label": "Show / Strike",
+   "kind": "show",
+   "items": [
+    "Call 8:00 AM",
+    "Show, then strike",
+    "Crew 8 AM–6 PM"
+   ]
+  },
+  {
+   "date": "2026-10-18",
+   "label": "Travel",
+   "kind": "travel",
+   "items": [
+    "Crew travel home"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "label": "Returns",
+   "kind": "prep",
+   "items": [
+    "Rentex return 9–11 AM",
+    "PRG pickup 11 AM–12 PM",
+    "Immense AV due 8:00 AM",
+    "Gig Rent de-prep ends 10/21 11 AM"
+   ]
+  }
+ ],
+ "room": [
+  [
+   "Room",
+   "Grand Ballroom, 114'-7\" × 206'-8\""
+  ],
+  [
+   "Ceiling",
+   "Soffits 17'-8\" · Chandeliers 16'-9\""
+  ],
+  [
+   "Stage",
+   "64' × 12' × 24\"h, (2) 4' × 8' wings, 2 steps"
+  ],
+  [
+   "Seating",
+   "719 total: 574 theater + 29 crescent rounds of 5 (145)"
+  ],
+  [
+   "FOH",
+   "Tech riser 18' × 8' × 16\"h — Audio · Lighting · TD; 3 × 6' tables"
+  ],
+  [
+   "Cameras",
+   "(2) 8' × 6' × 24\"h risers at ~90'; PTZ at ~105'"
+  ],
+  [
+   "Backstage",
+   "8 × 6' tables; Playback, GFX 1/2, GFX, Prompter, AI Tech, A2 / Rec, CAM Switch, E2; LED rack + E2 rack"
+  ],
+  [
+   "Power (CAD)",
+   "1 × 200A 208V 3Ø camlock backstage · 2 × 20A 120V Edison at FOH"
+  ],
+  [
+   "Network",
+   "Hard-wired internet drop backstage"
+  ],
+  [
+   "Drape",
+   "Black velour 59'w × 16'h each side; 19'w × 16'h upstage legs"
+  ],
+  [
+   "Truss",
+   "110' DS truss + 30' run, 12\"×12\" box, 16' to bottom; 8 × ½-ton CM Prostar"
+  ]
+ ],
+ "gear": {
+  "led": [
+   {
+    "g": "Main wall — 36 × 9 tiles (bottom row inactive lifter)",
+    "qty": "144",
+    "item": "ESD Pilot 2.6mm LED tile, full 500 × 1000mm",
+    "src": "GIG",
+    "note": "192 × 384 px each"
+   },
+   {
+    "g": "Main wall — 36 × 9 tiles (bottom row inactive lifter)",
+    "qty": "36",
+    "item": "ESD Pilot 2.6mm LED tile, half 500 × 500mm",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Main wall — 36 × 9 tiles (bottom row inactive lifter)",
+    "qty": "19",
+    "item": "4M Pilot 2.6 ground support",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Side screens — 2 × (8 × 9 tiles)",
+    "qty": "64",
+    "item": "ESD Pilot 2.6mm LED tile, full 500 × 1000mm",
+    "src": "GIG",
+    "note": "32 per side"
+   },
+   {
+    "g": "Side screens — 2 × (8 × 9 tiles)",
+    "qty": "16",
+    "item": "ESD Pilot 2.6mm LED tile, half 500 × 500mm",
+    "src": "GIG",
+    "note": "8 per side"
+   },
+   {
+    "g": "Side screens — 2 × (8 × 9 tiles)",
+    "qty": "8",
+    "item": "4M Pilot 2.6 ground support",
+    "src": "GIG",
+    "note": "4 per side"
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "2",
+    "item": "Novastar MX2000 Pro processor",
+    "src": "GIG",
+    "note": "Primary + backup"
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "2",
+    "item": "Novastar input card, HDMI 2.0",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "2",
+    "item": "Novastar input card, DP 1.2",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "2",
+    "item": "Novastar output card, 10G SFP",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "10",
+    "item": "Novastar CVT10-S fiber converter (5 kits)",
+    "src": "GIG",
+    "note": "5 runs × primary/backup"
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "6",
+    "item": "TAC 4 LC fiber, 245'",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "10",
+    "item": "10GTEK SFP BiDi TX/RX",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "1",
+    "item": "Blackmagic Mini Converter Sync Generator",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "1",
+    "item": "LED laptop (ThinkPad) — VMP 1.5.1, NovaLCT 5.9.1",
+    "src": "GIG",
+    "note": "+ TP-Link AX3000 router"
+   },
+   {
+    "g": "Processing & signal",
+    "qty": "75",
+    "item": "Ethercon to Ethernet, 25'",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "1",
+    "item": "LEX Viceroy distro rack (4 × Soca, 3 × L21, 6 × Edison)",
+    "src": "GIG",
+    "note": "+ 2/0 feeder set 10'"
+   },
+   {
+    "g": "Power",
+    "qty": "4",
+    "item": "Socapex 14c, 100'",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "5",
+    "item": "Soca M → 6 × PowerCon fanout (24', staggered)",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "10",
+    "item": "True1 → Edison (M), 5'",
+    "src": "GIG",
+    "note": ""
+   },
+   {
+    "g": "Tools",
+    "qty": "1",
+    "item": "LED tool kit + 5 never-ending ratchet straps",
+    "src": "GIG",
+    "note": ""
+   }
+  ],
+  "video": [
+   {
+    "g": "Switching",
+    "qty": "1",
+    "item": "Barco E2 Gen 2 — dual tricombo out + HDMI 2.0 out, 40×40 3G router, EC-30, dual UPS",
+    "src": "ELITE",
+    "note": "Mac + Dell GUI laptops"
+   },
+   {
+    "g": "Switching",
+    "qty": "1",
+    "item": "Barco E2 tricombo rack — 16×32 3G router, 2200VA UPS, Stream Deck XL",
+    "src": "ELITE",
+    "note": ""
+   },
+   {
+    "g": "Switching",
+    "qty": "1",
+    "item": "E2 workbox — patch, converters, cables ≤ 50'",
+    "src": "ELITE",
+    "note": ""
+   },
+   {
+    "g": "Switching",
+    "qty": "1",
+    "item": "8×8 HDMI 4K 4:4:4 router w/ per-output downscalers",
+    "src": "ELITE",
+    "note": "Multiview distro"
+   },
+   {
+    "g": "Playback",
+    "qty": "2",
+    "item": "Apple Mac Studio M2, 64GB, dual 24\" 4K monitors, 10G switch",
+    "src": "ELITE",
+    "note": "Millumin"
+   },
+   {
+    "g": "Playback",
+    "qty": "1",
+    "item": "PC server i9 / 64GB / RTX 3080 Ti",
+    "src": "ELITE",
+    "note": "Hi-res PowerPoint"
+   },
+   {
+    "g": "Playback",
+    "qty": "2",
+    "item": "Alienware M15 R6, i7 / RTX 3070",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Playback",
+    "qty": "5",
+    "item": "Dell Latitude E5420 laptops",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Signal",
+    "qty": "1",
+    "item": "FOH fiber kit — 660' 12-strand SM LC; 3 HDMI, 4 3G-SDI, 1 × 1G net, 1 × 4K HDMI",
+    "src": "ELITE",
+    "note": ""
+   },
+   {
+    "g": "Signal",
+    "qty": "1",
+    "item": "Large video cable package (4K)",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Signal",
+    "qty": "1",
+    "item": "USB extender over CAT5 package",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Displays",
+    "qty": "3",
+    "item": "60\" confidence monitor w/ hard doghouse",
+    "src": "DIG",
+    "note": "DSM ×3 on CAD"
+   },
+   {
+    "g": "Displays",
+    "qty": "1",
+    "item": "86\" LG 4K monitor, flown on truss",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Displays",
+    "qty": "2",
+    "item": "50\" monitor on pole stand, black spandex",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Displays",
+    "qty": "2",
+    "item": "Samsung 32\" 4K preview",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Displays",
+    "qty": "3",
+    "item": "Samsung 27\" preview",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Displays",
+    "qty": "2",
+    "item": "43\" 4K multiview kit (E2 + Milli MV)",
+    "src": "ELITE",
+    "note": ""
+   },
+   {
+    "g": "Displays",
+    "qty": "1",
+    "item": "Samsung 32\" multiview (GFX MV + FOH MV)",
+    "src": "ELITE",
+    "note": ""
+   },
+   {
+    "g": "Show control",
+    "qty": "1",
+    "item": "DSAN PerfectCue Mini + 4-port cue light hub",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Show control",
+    "qty": "1",
+    "item": "DSAN wireless speaker timer, large display",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Teleprompter",
+    "qty": "1",
+    "item": "Public speaking kit — main + backup computers, HDMI switcher, converters",
+    "src": "K2",
+    "note": "Op: Linda Morrison"
+   },
+   {
+    "g": "Camera",
+    "qty": "2",
+    "item": "Panasonic AK-UC4000 w/ CCU + 36× lens",
+    "src": "DIG",
+    "note": "Tripod + operator platform"
+   },
+   {
+    "g": "Camera",
+    "qty": "2",
+    "item": "Panasonic AW-UE150 4K60 PTZ + tripod stands",
+    "src": "DIG",
+    "note": "PoE++"
+   },
+   {
+    "g": "Camera",
+    "qty": "1",
+    "item": "Panasonic AW-RP150 PTZ controller",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Camera",
+    "qty": "1",
+    "item": "Blackmagic ATEM SDI Extreme ISO + 24\" preview",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Camera",
+    "qty": "2",
+    "item": "Blackmagic 4K Assist / HyperDeck Mini record (main + backup)",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Camera",
+    "qty": "1",
+    "item": "5-port gigabit switch + Core SWX SPU-4 supplies",
+    "src": "DIG",
+    "note": ""
+   }
+  ],
+  "audio": [
+   {
+    "g": "PA",
+    "qty": "12",
+    "item": "Turbosound Berlin 12\" line array",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "PA",
+    "qty": "4",
+    "item": "Turbosound iQ12 — stage mains",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "PA",
+    "qty": "4",
+    "item": "JBL PRX 18\" subwoofer",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "PA",
+    "qty": "4",
+    "item": "Berlin line array fly hardware",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "PA",
+    "qty": "2",
+    "item": "QSC K8 — foldback",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Console & RF",
+    "qty": "1",
+    "item": "Allen & Heath SQ-5 + snake",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Console & RF",
+    "qty": "1",
+    "item": "Shure ULXD 12-ch wireless combo w/ DA + paddles",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Console & RF",
+    "qty": "1",
+    "item": "Dante network kit",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Console & RF",
+    "qty": "1",
+    "item": "Clear-Com Arcadia, 15-pack",
+    "src": "DIG",
+    "note": "Comms"
+   },
+   {
+    "g": "Support",
+    "qty": "2",
+    "item": "Floor mic stand",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Support",
+    "qty": "1",
+    "item": "AES/XLR cable kit + GS audio workbox",
+    "src": "DIG",
+    "note": ""
+   }
+  ],
+  "lighting": [
+   {
+    "g": "Fixtures",
+    "qty": "10",
+    "item": "Ayrton Diablo S — LED profile w/ framing shutters",
+    "src": "IMMENSE",
+    "note": "5 kits of 2"
+   },
+   {
+    "g": "Fixtures",
+    "qty": "10",
+    "item": "GLP Impression X4 wash",
+    "src": "RENTEX",
+    "note": "10 in the rig + 2 spares (12 rented)"
+   },
+   {
+    "g": "Fixtures",
+    "qty": "16",
+    "item": "Chauvet Professional Rogue R1 Wash",
+    "src": "NIC",
+    "note": "Next Level AV (Nic Pagán)"
+   },
+   {
+    "g": "Control",
+    "qty": "1",
+    "item": "High End Hedgehog 4X + preview monitor",
+    "src": "DIG",
+    "note": "+ Samsung 27\" preview"
+   },
+   {
+    "g": "Control",
+    "qty": "1",
+    "item": "Obsidian Onyx NX Wing 16U console",
+    "src": "NIC",
+    "note": "From Next Level AV"
+   },
+   {
+    "g": "Control",
+    "qty": "1",
+    "item": "Lighting workbox",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Data",
+    "qty": "20",
+    "item": "5-pin DMX, 100' (red)",
+    "src": "PRG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "1",
+    "item": "200A 3Ø distro w/ Socapex + L21-30",
+    "src": "DIG",
+    "note": "100' feeder, 3 × L21 breakout boxes"
+   },
+   {
+    "g": "Power",
+    "qty": "4",
+    "item": "Socapex 19-pin 12/14, 100'",
+    "src": "PRG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "6",
+    "item": "Socapex 19-pin 12/14, 50'",
+    "src": "PRG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "4",
+    "item": "Socapex 19-pin 12/14, 25'",
+    "src": "PRG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "6",
+    "item": "Soca M → 6 × Edison F breakout, staggered",
+    "src": "PRG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "4",
+    "item": "L21-30 10/5, 100'",
+    "src": "PRG",
+    "note": ""
+   },
+   {
+    "g": "Power",
+    "qty": "4",
+    "item": "L21-30 8/5, 50'",
+    "src": "PRG",
+    "note": ""
+   }
+  ],
+  "staging": [
+   {
+    "g": "Drape & scenic",
+    "qty": "1",
+    "item": "Black pipe & drape 9'6\"–20'h × 60'w",
+    "src": "DIG",
+    "note": "24\" 65 lb bases + 25 lb weight"
+   },
+   {
+    "g": "Drape & scenic",
+    "qty": "1",
+    "item": "Black pipe & drape 9'6\"–20'h × 100'w",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Drape & scenic",
+    "qty": "1",
+    "item": "Roll of black duvetyne",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Floor",
+    "qty": "10",
+    "item": "Cable ramp",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Floor",
+    "qty": "2",
+    "item": "10' ladder",
+    "src": "DIG",
+    "note": ""
+   },
+   {
+    "g": "Rigging",
+    "qty": "8",
+    "item": "½-ton CM Prostar motor",
+    "src": "TALLEN",
+    "note": ""
+   },
+   {
+    "g": "Rigging",
+    "qty": "14",
+    "item": "12\" × 12\" box truss, 10' straight",
+    "src": "TALLEN",
+    "note": ""
+   },
+   {
+    "g": "Rigging",
+    "qty": "1",
+    "item": "4-way corner block",
+    "src": "TALLEN",
+    "note": ""
+   },
+   {
+    "g": "Office",
+    "qty": "12",
+    "item": "Table power pack",
+    "src": "DIG",
+    "note": "6 office, 6 business center"
+   }
+  ]
+ },
+ "motors": [
+  [
+   "M1",
+   "249.61"
+  ],
+  [
+   "M2",
+   "542.75"
+  ],
+  [
+   "M3",
+   "510.45"
+  ],
+  [
+   "M4",
+   "545.69"
+  ],
+  [
+   "M5",
+   "341.68"
+  ],
+  [
+   "M6",
+   "348.12"
+  ],
+  [
+   "M7",
+   "245.90"
+  ],
+  [
+   "M8",
+   "500.35"
+  ]
+ ],
+ "vendors": [
+  {
+   "code": "DIG",
+   "name": "Digerati Productions (our warehouse)",
+   "ref": "Proposal 26-0951 (gear) · 26-0953 (labor)",
+   "dept": "All",
+   "contact": "Brian Heffle, gear coordinator · 407-463-9657",
+   "where": "4455 Dardanelle Dr, Suite A, Orlando, FL 32808",
+   "out": "",
+   "back": ""
+  },
+  {
+   "code": "GIG",
+   "name": "Gig Rent",
+   "ref": "Quote 26-0882 · Confirmed",
+   "dept": "LED",
+   "contact": "Matthew Certa · 407-557-9922",
+   "where": "Will call — 851 Gills Dr, Suite 900, Orlando, FL 32824",
+   "out": "Prep from 10/7 1:00 PM · ships dedicated 53' semi",
+   "back": "De-prep ends 10/21 11:00 AM"
+  },
+  {
+   "code": "ELITE",
+   "name": "Elite Visual Services",
+   "ref": "Estimate 2026064",
+   "dept": "Video",
+   "contact": "Hollywood, FL",
+   "where": "Ships to and from Digerati",
+   "out": "Operator travels 10/13",
+   "back": "Operator travels 10/18"
+  },
+  {
+   "code": "RENTEX",
+   "name": "Rentex Orlando",
+   "ref": "Ref 554967 — Impression X4",
+   "dept": "Lighting",
+   "contact": "Adam Sufka · 407-450-1953",
+   "where": "Will call — 9664 Oak Crossing Rd, Suite 800, Orlando, FL 32837",
+   "out": "10/8, 9–11 AM",
+   "back": "10/20, 9–11 AM"
+  },
+  {
+   "code": "IMMENSE",
+   "name": "Immense Audio Visual",
+   "ref": "Quote 544 — DIG261008 261013",
+   "dept": "Lighting",
+   "contact": "407-349-7315 · info@immenseav.com",
+   "where": "3860 Bengert St, Orlando, FL 32808",
+   "out": "10/8",
+   "back": "10/20, 8:00 AM"
+  },
+  {
+   "code": "PRG",
+   "name": "PRG Orlando",
+   "ref": "Job 1513508",
+   "dept": "Lighting",
+   "contact": "Freddy Rodriguez · 407-855-8060",
+   "where": "Will call — 8063 Beacon Lake Dr, Suite 100, Orlando, FL 32809",
+   "out": "10/8, 3:00 PM",
+   "back": "Pickup 10/20, 11 AM–12 PM"
+  },
+  {
+   "code": "NIC",
+   "name": "Next Level Audio Visual (Nic Pagán)",
+   "ref": "Estimate 2026107 — R1 Wash + Onyx console",
+   "dept": "Lighting",
+   "contact": "Nic Pagán · 863-308-2934",
+   "where": "5550 Superior Dr, Lakeland, FL 33805",
+   "out": "Advance prep; rental from 10/9 · delivery included",
+   "back": "10/20 · pickup included"
+  },
+  {
+   "code": "K2",
+   "name": "K2 Productions",
+   "ref": "Estimate 3409",
+   "dept": "Video",
+   "contact": "Katie · 404-819-9438 · katie@k2-productions.com",
+   "where": "Atlanta, GA",
+   "out": "Op on site 10/14–10/17",
+   "back": ""
+  },
+  {
+   "code": "TALLEN",
+   "name": "Tallen (Hyatt in-house)",
+   "ref": "SO# 551963",
+   "dept": "Venue",
+   "contact": "CAD: Matt Waldner",
+   "where": "Hyatt Regency Chicago",
+   "out": "",
+   "back": ""
+  }
+ ],
+ "crew": [
+  {
+   "role": "Engineer in Charge (EIC)",
+   "dept": "All",
+   "name": "Trevor Zulinke",
+   "co": "Digerati",
+   "phone": "352-842-7432",
+   "email": "tzulinke@digeratiproductions.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": "Main on-site contact"
+  },
+  {
+   "role": "Video Engineer / E2",
+   "dept": "Video",
+   "name": "Jonathan Fuller",
+   "co": "Elite Visual Services",
+   "phone": "786-501-5290",
+   "email": "jgf@evsllc.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": "Runs E2; Elite switching + playback package"
+  },
+  {
+   "role": "LED Engineer",
+   "dept": "LED",
+   "name": "Anthony Pouparina",
+   "co": "Digerati",
+   "phone": "305-215-8892",
+   "email": "apexavservices@gmail.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": ""
+  },
+  {
+   "role": "Media Server Operator",
+   "dept": "Video",
+   "name": "Mat Rosario",
+   "co": "Digerati",
+   "phone": "786-717-0699",
+   "email": "mathew.rosario27@gmail.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": "On-site contact for audio + LED"
+  },
+  {
+   "role": "Audio Engineer",
+   "dept": "Audio",
+   "name": "Ercel Abbott",
+   "co": "Digerati",
+   "phone": "407-421-9900",
+   "email": "ercel@abbottproductiongroup.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": ""
+  },
+  {
+   "role": "Lighting Engineer",
+   "dept": "Lighting",
+   "name": "Nic Pagán",
+   "co": "Digerati",
+   "phone": "863-308-2934",
+   "email": "nic.pagan@icloud.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": ""
+  },
+  {
+   "role": "Production Assistant",
+   "dept": "All",
+   "name": "Drew Bunner",
+   "co": "Digerati",
+   "phone": "336-901-5518",
+   "email": "dbunner@digeratiproductions.com",
+   "arrive": "10/13",
+   "depart": "10/18",
+   "flight": "",
+   "hotel": "",
+   "note": "Trevor's PA"
+  },
+  {
+   "role": "Teleprompter Operator",
+   "dept": "Video",
+   "name": "Linda Morrison",
+   "co": "K2 Productions",
+   "phone": "",
+   "email": "",
+   "arrive": "",
+   "depart": "",
+   "flight": "",
+   "hotel": "",
+   "note": "On site 10/14–10/17"
+  },
+  {
+   "role": "Project Manager (office)",
+   "dept": "All",
+   "name": "Iago Horta",
+   "co": "Digerati",
+   "phone": "386-597-9982",
+   "email": "ihorta@digeratiproductions.com",
+   "arrive": "",
+   "depart": "",
+   "flight": "",
+   "hotel": "",
+   "note": "Not traveling"
+  },
+  {
+   "role": "Gear Coordinator (Orlando)",
+   "dept": "All",
+   "name": "Brian Heffle",
+   "co": "Digerati",
+   "phone": "407-463-9657",
+   "email": "bheffle@digeratiproductions.com",
+   "arrive": "",
+   "depart": "",
+   "flight": "",
+   "hotel": "",
+   "note": "Not traveling; gear pickups"
+  }
+ ],
+ "issues": [],
+ "updates": [
+  {
+   "date": "Oct 8",
+   "text": "Audio: switching from all-Berlin to 12 Berlin + 4 Turbosound iQ12 front fills for better front-row coverage."
+  },
+  {
+   "date": "Oct 8",
+   "text": "Lighting: Nic Pagan is supplying 16 Chauvet Rogue R1."
+  },
+  {
+   "date": "Oct 8",
+   "text": "Audio: iQ12s are stage mains. Subs are JBL PRX 18\"."
+  },
+  {
+   "date": "Oct 8",
+   "text": "Lighting: 16 Chauvet Rogue R1 Wash plus an Onyx NX Wing console from Next Level AV. 10 of the 12 GLP Impression X4s go in the rig; 2 are spares."
+  },
+  {
+   "date": "Oct 8",
+   "text": "Crew confirmed: Jonathan Fuller (Video/E2), Anthony Pouparina (LED), Mat Rosario (Media Server), Ercel Abbott (Audio), Nic Pagán (Lighting), Drew Bunner. Call times updated from the labor POs."
+  }
+ ],
+ "crewUrl": "",
+ "crewSyncedAt": "2026-10-08T14:56:50.597973+00:00",
+ "savedAt": ""
+}
+</script>
+<script id="app-js">
+(function(){
+"use strict";
+var MODE="crew";var SITE=true;var CREW=MODE==="crew";
+var dataEl=document.getElementById("show-data");
+var S=JSON.parse(dataEl.textContent);
+var SRC={DIG:"Digerati",GIG:"Gig Rent",ELITE:"Elite Visual",RENTEX:"Rentex",IMMENSE:"Immense AV",PRG:"PRG",NIC:"Next Level AV",K2:"K2 Productions",TALLEN:"Tallen / venue"};
+var FONTS=["files/fonts/Soleil/Soleil-Bold.otf", "files/fonts/Soleil/Soleil-BoldItalic.otf", "files/fonts/Soleil/Soleil-Italic.otf", "files/fonts/Soleil/Soleil.otf", "files/fonts/Soleil/SoleilBk-Italic.otf", "files/fonts/Soleil/SoleilBk.otf", "files/fonts/Soleil/SoleilBl-Italic.otf", "files/fonts/Soleil/SoleilBl.otf", "files/fonts/Soleil/SoleilLt-Italic.otf", "files/fonts/Soleil/SoleilLt.otf", "files/fonts/Soleil/SoleilMagicCapsYang.otf", "files/fonts/Soleil/SoleilMagicCapsYin.otf", "files/fonts/Soleil/SoleilMagicCapsYinYang.otf", "files/fonts/Soleil/SoleilSb-Italic.otf", "files/fonts/Soleil/SoleilSb.otf", "files/fonts/Soleil/SoleilXb-Italic.otf", "files/fonts/Soleil/SoleilXb.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-Black.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-BlackItalic.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-Bold.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-BoldItalic.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-Light.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-LightItalic.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-Medium.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-MediumItalic.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-Regular.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-RegularItalic.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-Semibold.otf", "files/fonts/Tiempos-Headline/TiemposHeadline-SemiboldItalic.otf"];
+var FILES={
+ cad:{name:"Tallen CAD v5 — full set (6 sheets)",path:"files/NP-Chicago-CAD-v5.pdf",size:"9.7 MB"},
+ ledMap:{name:"LED pixel map + Novastar layout",path:"files/LED-Pixel-Map.pdf",size:"1.7 MB"},
+ brand:{name:"Nixon Peabody brand guidelines (Feb 2025)",path:"files/NP-Brand-Guidelines-2025.pdf",size:"2.6 MB"},
+ fonts:{name:"Brand fonts — Tiempos Headline (12) + Soleil (17), OTF",zip:"NP-Brand-Fonts-Tiempos-Soleil.zip",bundle:FONTS,size:"≈ 4 MB zip"},
+ allDraw:{name:"Everything visual — CAD, LED PDFs, renderings",zip:"NP-Chicago-Drawings-and-Renders.zip",bundle:["files/NP-Chicago-CAD-v5.pdf",  "files/LED-Pixel-Map.pdf", "files/render-stage-elevation.jpg", "files/render-house-view.jpg", "files/render-stage-pov.jpg"],size:"≈ 13 MB zip"},
+ allBrand:{name:"Brand package — guidelines + fonts",zip:"NP-Chicago-Brand-Package.zip",bundle:["files/NP-Brand-Guidelines-2025.pdf"].concat(FONTS),size:"≈ 7 MB zip"}
+};
+var RENDERS=[
+ {src:"files/render-stage-elevation.jpg",t:"Stage elevation — full LED wall",wide:true},
+ {src:"files/render-house-view.jpg",t:"House view from the audience"},
+ {src:"files/render-stage-pov.jpg",t:"Presenter's view — prompters + DSMs"}
+];
+var CAD=[
+ {n:1,t:"Floor plan — seating (719)"},{n:2,t:"Elevation + section"},{n:3,t:"Production plan"},
+ {n:4,t:"Rigging + motor loads"},{n:5,t:"LED surface map"},{n:6,t:"Teleprompter + stage views"}
+];
+var LEDIMG=[{src:"files/led-map-1.jpg",t:"Pixel map — 9984 × 1728 canvas",wide:true},{src:"files/led-map-2.jpg",t:"Fiber + MX2000 output layout",wide:true}];
+var SECTIONS=[
+ {id:"overview",t:"Overview",grp:"Show"},
+ {id:"renders",t:"Renderings",grp:"Show"},
+ {id:"cad",t:"CAD",grp:"Show"},
+ {id:"led",t:"LED",grp:"Departments"},
+ {id:"video",t:"Video & Camera",grp:"Departments"},
+ {id:"audio",t:"Audio",grp:"Departments"},
+ {id:"lighting",t:"Lighting",grp:"Departments"},
+ {id:"staging",t:"Staging & Rigging",grp:"Departments"},
+ {id:"sourcing",t:"Sourcing",grp:"Logistics"},
+ {id:"crew",t:"Crew & Travel",grp:"Logistics"},
+ {id:"checks",t:"Cross-check",grp:"Logistics"},
+ {id:"brand",t:"Brand & Files",grp:"Logistics"}
+];
+if(CREW){SECTIONS=SECTIONS.filter(function(s){return s.id!=="checks"&&s.id!=="sourcing"})}else{SECTIONS.unshift({id:"send",t:"Send to crew",grp:"Show"})}
+var DEPT_FOR={led:["LED","Power"],video:["Video"],audio:["Audio"],lighting:["Lighting","Power","Rigging"],staging:["Rigging","Power","Logistics"]};
+var editing=false, canWrite=null, dirty=false, art=null, dl=null, issueFilter="open";
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function $(s,r){return (r||document).querySelector(s)}
+var ICON={
+ link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M11 6l.5-.5a4.2 4.2 0 016 6l-.5.5"/><path d="M13 18l-.5.5a4.2 4.2 0 01-6-6l.5-.5"/></svg>',
+ dl:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>',
+ open:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>',
+ full:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg>',
+ edit:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>'
+};
+function toast(m){var t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(function(){t.remove()},2600)}
+function copy(text,label){
+  var done=function(){toast(label||"Copied")};
+  try{navigator.clipboard.writeText(text).then(done,function(){fallbackCopy(text,label)})}catch(e){fallbackCopy(text,label)}
+}
+function fallbackCopy(text,label){
+  var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
+  var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+  ta.remove();toast(ok?(label||"Copied"):"Copy this link: "+text);
+}
+function linkFor(id){var crewOk=!CREW&&S.crewUrl&&id!=="checks"&&id!=="send";var base=(crewOk?S.crewUrl:(CREW?(S.crewUrl||location.href):(S.shareUrl||location.href))).split("#")[0];return base+"#"+id}
+function openCount(depts){return S.issues.filter(function(i){return i.status!=="resolved"&&(!depts||depts.indexOf(i.dept)>-1)}).length}
+function srcPill(c){return '<span class="pill src">'+esc(SRC[c]||c)+'</span>'}
+function fileBtn(k,label){var f=FILES[k];return '<button class="btn" data-dl="'+k+'">'+ICON.dl+(label||"Download")+'</button>'}
+
+/* ---------- section renderers ---------- */
+function head(id,title,desc,extra){
+  return '<div class="sechead"><div><h2>'+esc(title)+'</h2>'+(desc?'<p>'+desc+'</p>':'')+'</div><div class="tools">'+(extra||"")+
+  '<button class="btn" data-copy="'+id+'">'+ICON.link+((!CREW&&id!=="checks"&&id!=="send")?'Copy crew link':'Copy link to this page')+'</button></div></div>';
+}
+function gearTable(key){
+  var rows=S.gear[key]||[];
+  if(editing){
+    var h='<div class="tw"><table><thead><tr><th>Group</th><th>Qty</th><th>Item</th><th>Source</th><th>Crew note</th><th>Internal note</th><th>Hide from crew</th><th></th></tr></thead><tbody>';
+    rows.forEach(function(r,i){
+      h+='<tr><td><input id="g-'+key+'-'+i+'-g" data-bind="gear.'+key+'.'+i+'.g" value="'+esc(r.g)+'"></td>'+
+      '<td><input class="qty" id="g-'+key+'-'+i+'-q" data-bind="gear.'+key+'.'+i+'.qty" value="'+esc(r.qty)+'"></td>'+
+      '<td><input id="g-'+key+'-'+i+'-i" data-bind="gear.'+key+'.'+i+'.item" value="'+esc(r.item)+'"></td>'+
+      '<td><select id="g-'+key+'-'+i+'-s" data-bind="gear.'+key+'.'+i+'.src">'+Object.keys(SRC).map(function(k){return '<option value="'+k+'"'+(k===r.src?" selected":"")+'>'+esc(SRC[k])+'</option>'}).join("")+'</select></td>'+
+      '<td><input id="g-'+key+'-'+i+'-n" data-bind="gear.'+key+'.'+i+'.note" value="'+esc(r.note)+'"></td>'+
+      '<td><input id="g-'+key+'-'+i+'-in" data-bind="gear.'+key+'.'+i+'.inote" value="'+esc(r.inote||"")+'"></td>'+
+      '<td style="text-align:center"><input type="checkbox" style="width:auto;min-width:0" id="g-'+key+'-'+i+'-h" data-check="gear.'+key+'.'+i+'.hide"'+(r.hide?" checked":"")+'></td>'+
+      '<td><button class="rm" title="Remove line" data-rm="gear.'+key+'.'+i+'">×</button></td></tr>';
+    });
+    return h+'</tbody></table></div><div style="margin-top:8px"><button class="btn" data-add="gear.'+key+'">+ Add gear line</button></div>';
+  }
+  var h2='<div class="tw"><table><thead><tr><th style="text-align:right">Qty</th><th>Item</th><th>Source</th><th>Notes</th></tr></thead><tbody>',last=null;
+  rows.forEach(function(r){
+    if(CREW&&r.hide)return;
+    if(r.g!==last){h2+='<tr class="grouprow"><td colspan="4">'+esc(r.g)+'</td></tr>';last=r.g}
+    h2+='<tr><td class="q">'+esc(r.qty)+'</td><td>'+esc(r.item)+'</td><td>'+srcPill(r.src)+'</td><td class="sub">'+esc(r.note)+(!CREW&&r.inote?' <span class="pill warn">'+esc(r.inote)+'</span>':'')+(!CREW&&r.hide?' <span class="pill src">Hidden from crew</span>':'')+'</td></tr>';
+  });
+  return h2+'</tbody></table></div>';
+}
+function openBlock(depts,label){if(CREW)return "";return '<h3>'+(label||"Open items")+' <span class="pill warn" style="vertical-align:middle">Only you see this</span></h3>'+issuesFor(depts)}
+function issuesFor(depts){
+  var list=S.issues.map(function(x,i){x._i=i;return x}).filter(function(i){return depts.indexOf(i.dept)>-1&&i.status!=="resolved"});
+  if(!list.length) return '<p class="muted">No open cross-check items for this department.</p>';
+  return '<div class="stack" style="gap:8px">'+list.map(issueCard).join("")+'</div>';
+}
+function sevPill(s){return s==="high"?'<span class="pill crit"><i class="dot"></i>Needs answer</span>':s==="med"?'<span class="pill warn"><i class="dot"></i>Check</span>':'<span class="pill src">Minor</span>'}
+function issueCard(x){
+  var i=x._i;
+  if(editing){
+    return '<div class="issue '+esc(x.sev)+(x.status==="resolved"?" resolved":"")+'"><span class="sev"></span><div class="stack" style="gap:6px">'+
+    '<input id="is-'+i+'-t" data-bind="issues.'+i+'.title" value="'+esc(x.title)+'" class="ed" style="font-weight:600;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:4px 6px">'+
+    '<textarea class="ed" id="is-'+i+'-d" data-bind="issues.'+i+'.detail">'+esc(x.detail)+'</textarea>'+
+    '<div class="meta"><select id="is-'+i+'-dp" data-bind="issues.'+i+'.dept">'+["Audio","Lighting","LED","Video","Power","Rigging","Schedule","Travel","Logistics"].map(function(d){return '<option'+(d===x.dept?" selected":"")+'>'+d+'</option>'}).join("")+'</select>'+
+    '<select id="is-'+i+'-sv" data-bind="issues.'+i+'.sev">'+["high","med","low"].map(function(d){return '<option'+(d===x.sev?" selected":"")+'>'+d+'</option>'}).join("")+'</select></div></div>'+
+    '<div class="stack" style="gap:6px"><button class="btn" data-toggle="'+i+'">'+(x.status==="resolved"?"Reopen":"Mark resolved")+'</button><button class="rm" data-rm="issues.'+i+'">×</button></div></div>';
+  }
+  return '<div class="issue '+esc(x.sev)+(x.status==="resolved"?" resolved":"")+'"><span class="sev"></span><div><div class="title">'+esc(x.title)+'</div><p>'+esc(x.detail)+'</p>'+
+  '<div class="meta"><span class="pill info">'+esc(x.dept)+'</span>'+(x.status==="resolved"?'<span class="pill ok">Resolved</span>':sevPill(x.sev))+'</div></div><span></span></div>';
+}
+function crewFor(depts){
+  var list=S.crew.filter(function(c){return depts.indexOf(c.dept)>-1||c.dept==="All"});
+  return '<div class="tw"><table><thead><tr><th>Role</th><th>Name</th><th>Company</th><th>Phone</th><th>Email</th></tr></thead><tbody>'+
+  list.map(function(c){return '<tr><td>'+esc(c.role)+'</td><td>'+(c.name?esc(c.name):'<span class="muted">TBD</span>')+'</td><td class="sub">'+esc(c.co)+'</td><td class="mono small">'+esc(c.phone)+'</td><td class="mono small">'+esc(c.email||'')+'</td></tr>'}).join("")+
+  '</tbody></table></div>';
+}
+function docRow(k){var f=FILES[k];return '<div class="file"><div><b>'+esc(f.name)+'</b><div class="muted small">'+esc(f.size)+'</div></div><div class="acts">'+(f.path?'<a class="btn" href="'+f.path+'" target="_blank" rel="noopener">'+ICON.open+'Open</a>':'')+fileBtn(k,f.bundle?"Download .zip":"Download")+'</div></div>'}
+function shots(list,group){
+  return '<div class="gal">'+list.map(function(r,i){return '<button class="shot'+(r.wide?" wide":"")+'" data-lb="'+group+'" data-i="'+i+'"><span class="img"><img loading="lazy" src="'+(r.thumb||r.src)+'" alt="'+esc(r.t)+'"></span><span class="cap"><b>'+esc(r.t)+'</b><span class="muted small">'+ICON.full+'</span></span></button>'}).join("")+'</div>';
+}
+
+var R={};
+R.send=function(){
+  var h=head("send","Send to crew","Each link opens one page of the crew view. They see gear, renderings, CAD and crew info, but not conflicts or internal notes.");
+  var fmt=function(s){if(!s)return "never";var d=new Date(s);return isNaN(d)?s:d.toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})};
+  var stale=S.savedAt&&(!S.crewSyncedAt||new Date(S.savedAt)>new Date(S.crewSyncedAt));
+  h+='<div class="note" style="'+(stale?'border-color:var(--warn);background:var(--warn-soft)':'')+'">Dashboard last saved: <b>'+fmt(S.savedAt)+'</b> · Crew view last updated: <b>'+fmt(S.crewSyncedAt)+'</b>'+(stale?'<br>You have changes the crew can\'t see yet. Ask Claude to "sync the crew view".':'')+'</div>';
+  if(!S.crewUrl){h+='<p class="muted">The crew view link isn\'t set yet.</p>';return h}
+  var who={overview:"Everyone",renders:"Client, everyone",cad:"Everyone, Tallen",led:"LED engineer, content",video:"Video, E2 op, prompter, camera",audio:"Audio",lighting:"Lighting, Nic",staging:"Everyone",sourcing:"Brian / gear pickups",crew:"Traveling crew",brand:"GFX, playback, content"};
+  h+='<div class="tw" style="margin-top:14px"><table><thead><tr><th>Page</th><th>Send to</th><th></th></tr></thead><tbody>'+
+  SECTIONS.filter(function(s){return s.id!=="send"&&s.id!=="checks"&&s.id!=="sourcing"}).map(function(s){return '<tr><td style="font-weight:600">'+esc(s.t)+'</td><td class="sub">'+esc(who[s.id]||"")+'</td><td style="text-align:right;white-space:nowrap"><button class="btn" data-copy="'+s.id+'">'+ICON.link+'Copy link</button> <a class="btn" href="'+esc(S.crewUrl.split("#")[0]+"#"+s.id)+'" target="_blank" rel="noopener">'+ICON.open+'Preview</a></td></tr>'}).join("")+
+  '</tbody></table></div>';
+  h+='<h3>What the crew view hides</h3><ul class="small muted" style="margin:0;padding-left:18px"><li>The Cross-check page and every open-item list</li><li>Open-item counts in the header and menu</li><li>Internal gear notes (orange tags here) and lines marked "Hidden from crew"</li><li>The Sourcing tab (vendor contacts, pickups and returns)</li><li>The Edit button</li></ul>';
+  h+='<p class="small muted">The crew view is set up to be shared publicly, so anyone with a link can read it. That includes phone numbers and hotel confirmation numbers on the Crew &amp; Travel page.</p>';
+  return h;
+};
+R.overview=function(){
+  var d=S.show,h=head("overview","Overview","Everything for the "+esc(d.client)+" "+esc(d.event)+" in one place. "+(CREW?"Pick your department on the left. Everything you need for the show is here.":"This is your private dashboard. Crew see the clean version without conflicts or internal notes. Use Send to crew for their links."));
+  h+='<div class="grid g2"><div class="card"><h4>Show</h4><dl class="kv"><dt>Client</dt><dd>'+esc(d.client)+' — '+esc(d.event)+'</dd><dt>Venue</dt><dd>'+esc(d.venue)+', '+esc(d.room)+'</dd><dt>Address</dt><dd>'+esc(d.address)+'</dd><dt>In-house</dt><dd>'+esc(d.inhouse)+'</dd><dt>EIC</dt><dd>'+esc(d.eic)+'</dd><dt>Office</dt><dd>'+esc(d.office)+'</dd></dl></div>'+
+  '<div class="card" style="padding:0;overflow:hidden">'+mapSvg()+'<div style="padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between"><div><b>Hyatt Regency Chicago</b><div class="muted small">151 E Wacker Dr · ORD ≈ 17 mi · MDW ≈ 11 mi</div></div><div class="tools"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hyatt+Regency+Chicago+151+E+Wacker+Dr">'+ICON.open+'Google Maps</a><a class="btn" target="_blank" rel="noopener" href="https://maps.apple.com/?q=Hyatt+Regency+Chicago&address=151+E+Wacker+Dr,+Chicago,+IL+60601">'+ICON.open+'Apple Maps</a></div></div></div></div>';
+  h+='<h3>Schedule · all times Central</h3><div class="days">'+S.schedule.map(function(x){var dt=new Date(x.date+"T12:00:00");var wd=dt.toLocaleDateString("en-US",{weekday:"short"});var md=dt.toLocaleDateString("en-US",{month:"short",day:"numeric"});
+    return '<div class="day'+(x.kind==="show"||x.kind==="work"?" show":"")+'"><span class="w">'+wd+' · '+esc(x.label)+'</span><span class="d">'+md+'</span><ul>'+x.items.map(function(i){return '<li>'+esc(i)+'</li>'}).join("")+'</ul></div>'}).join("")+'</div>';
+  h+='<h3>Latest updates</h3>'+(editing?updEdit():'<div class="card">'+(S.updates.length?S.updates.slice().reverse().map(function(u){return '<div class="upd"><span class="muted small mono">'+esc(u.date)+'</span><span>'+esc(u.text)+'</span></div>'}).join(""):'<p class="muted">No updates yet.</p>')+'</div>');
+  h+='<h3>Room &amp; stage</h3><div class="card"><dl class="kv">'+S.room.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join("")+'</dl></div>';
+  if(!CREW)h+='<h3>Open items by department</h3><div class="grid g3">'+["Audio","Lighting","LED","Video","Power","Rigging","Travel","Schedule","Logistics"].map(function(dp){var n=openCount([dp]);return '<a class="card" style="text-decoration:none;color:inherit;display:flex;justify-content:space-between;align-items:center" href="#checks" data-dept="'+dp+'"><span style="font-weight:600">'+dp+'</span>'+(n?'<span class="pill '+(S.issues.some(function(i){return i.dept===dp&&i.sev==="high"&&i.status!=="resolved"})?"crit":"warn")+'">'+n+' open</span>':'<span class="pill ok">Clear</span>')+'</a>'}).join("")+'</div>';
+  return h;
+};
+function updEdit(){
+  return '<div class="card stack" style="gap:8px">'+S.updates.map(function(u,i){return '<div style="display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:8px"><input class="ed" id="up-'+i+'-d" data-bind="updates.'+i+'.date" value="'+esc(u.date)+'" style="border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:4px 6px"><textarea class="ed" id="up-'+i+'-t" data-bind="updates.'+i+'.text">'+esc(u.text)+'</textarea><button class="rm" data-rm="updates.'+i+'">×</button></div>'}).join("")+'<div><button class="btn" data-add="updates">+ Add update</button></div></div>';
+}
+function mapSvg(){
+  return '<div class="mapbox" style="border:0;border-radius:0"><svg viewBox="0 0 600 230" role="img" aria-label="Schematic: Hyatt Regency Chicago on East Wacker Drive, south of the Chicago River, east of Michigan Avenue">'+
+  '<rect width="600" height="230" fill="var(--surface-2)"/>'+
+  '<path d="M0 62 C120 58 230 70 330 64 S520 54 600 60 L600 92 C520 86 420 94 330 96 S120 92 0 96Z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>'+
+  '<text x="20" y="84" font-size="12" fill="var(--accent)" font-family="var(--display)" letter-spacing="2">CHICAGO RIVER</text>'+
+  '<rect x="0" y="108" width="600" height="14" fill="var(--surface)" stroke="var(--line)"/><text x="20" y="119" font-size="10" fill="var(--muted)" font-family="var(--body)">E WACKER DR</text>'+
+  '<rect x="170" y="20" width="14" height="210" fill="var(--surface)" stroke="var(--line)"/><text x="160" y="200" font-size="10" fill="var(--muted)" transform="rotate(-90 160 200)" font-family="var(--body)">N MICHIGAN AVE</text>'+
+  '<rect x="440" y="100" width="12" height="130" fill="var(--surface)" stroke="var(--line)"/><text x="468" y="215" font-size="10" fill="var(--muted)" transform="rotate(-90 468 215)" font-family="var(--body)">STETSON AVE</text>'+
+  '<rect x="0" y="196" width="600" height="12" fill="var(--surface)" stroke="var(--line)"/><text x="20" y="206" font-size="10" fill="var(--muted)" font-family="var(--body)">E LAKE ST (LOWER LEVEL)</text>'+
+  '<rect x="260" y="130" width="70" height="56" rx="3" fill="var(--ink)"/><rect x="340" y="130" width="70" height="56" rx="3" fill="var(--ink)"/>'+
+  '<circle cx="335" cy="125" r="7" fill="var(--crit)" stroke="var(--surface)" stroke-width="2"/>'+
+  '<text x="295" y="162" font-size="10" fill="var(--bg)" text-anchor="middle" font-family="var(--display)" letter-spacing="1">WEST</text><text x="375" y="162" font-size="10" fill="var(--bg)" text-anchor="middle" font-family="var(--display)" letter-spacing="1">EAST</text>'+
+  '<text x="590" y="222" font-size="9" fill="var(--muted)" text-anchor="end" font-family="var(--body)">Schematic, not to scale</text>'+
+  '<g transform="translate(560 30)"><path d="M0 -14 L6 4 L0 0 L-6 4Z" fill="var(--ink)"/><text y="18" font-size="10" text-anchor="middle" fill="var(--muted)">N</text></g></svg></div>';
+}
+R.renders=function(){
+  var h=head("renders","Renderings","From Tallen's CAD v5. Tap any image for full screen; use Actual size to zoom to full resolution.",fileBtn("allDraw","Download all drawings"));
+  h+='<button class="hero-shot" data-lb="renders" data-i="0"><img src="'+RENDERS[0].src+'" alt="'+esc(RENDERS[0].t)+'"></button>';
+  h+='<h3>All renderings</h3>'+shots(RENDERS,"renders");
+  h+='<h3>LED content previews</h3>'+shots(LEDIMG,"ledimg");
+  return h;
+};
+R.cad=function(){
+  var h=head("cad","CAD","Tallen drawing set v5 for SO# 551963, drawn 8/27/26 by Matt Waldner. Each sheet opens full screen.",fileBtn("cad","Download full CAD PDF"));
+  h+=shots(CAD.map(function(c){return {src:"files/cad-page-"+c.n+".jpg",thumb:"files/cad-thumb-"+c.n+".jpg",t:"Sheet "+c.n+" · "+c.t}}),"cad");
+  h+='<h3>Files</h3><div class="files">'+docRow("cad")+'</div>';
+  return h;
+};
+R.led=function(){
+  var h=head("led","LED","Gig Rent build, quote 26-0882 (confirmed). ESD Pilot 2.6mm throughout.",fileBtn("ledMap","Pixel map PDF"));
+  h+='<div class="card"><h4>Surfaces · as seen from the house</h4><div class="surf"><div class="side"><b>Stage left</b><span class="num">1536 × 1728</span></div><div class="main"><b>Main wall</b><span class="num">6912 × 1536 active</span></div><div class="side"><b>Stage right</b><span class="num">1536 × 1728</span></div></div><p class="muted small" style="margin:6px 0 0">Main wall bottom row (36 tiles) is an inactive lifter row. Full raster is 9984 × 1728: left 0–1535, main 1536–8447 (top-aligned, 1536 tall), right 8448–9983 — confirm against the pixel map below.</p></div>';
+  h+='<h3>Surface specs</h3><div class="tw"><table><thead><tr><th>Surface</th><th>Tiles (500mm)</th><th>Size (mm)</th><th>Size (ft)</th><th>Pixels</th></tr></thead><tbody>'+
+  '<tr><td>Main wall</td><td class="mono">36w × 9h = 324 (288 active)</td><td class="mono">18000 × 4500 (4000 active)</td><td class="mono">59.06\' × 14.76\' (13.12\' active)</td><td class="mono">6912 × 1536</td></tr>'+
+  '<tr><td>Side screens (×2)</td><td class="mono">8w × 9h = 72 each</td><td class="mono">4000 × 4500</td><td class="mono">13.12\' × 14.76\'</td><td class="mono">1536 × 1728</td></tr>'+
+  '</tbody></table></div>';
+  h+='<h3>Signal flow</h3><div class="card"><div class="flow"><span class="n">E2 outputs</span><span class="a">→</span><span class="n">MX2000 Pro primary + backup<br><span class="muted small">HDMI 2.0 / DP 1.2 in · 10G SFP out</span></span><span class="a">→</span><span class="n">5 × fiber runs, each CVT10-S primary + backup</span><span class="a">→</span><span class="n">Wall</span></div><p class="muted small" style="margin:8px 0 0">Sync: Blackmagic Mini Converter Sync Generator. Control: ThinkPad with Novastar VMP 1.5.1 / NovaLCT 5.9.1.</p></div>';
+  h+='<h3>Pixel map</h3>'+shots(LEDIMG,"ledimg");
+  h+='<h3>Gear</h3>'+gearTable("led");
+  h+=openBlock(DEPT_FOR.led)+'<h3>Crew</h3>'+crewFor(["LED"]);
+  return h;
+};
+R.video=function(){
+  var h=head("video","Video & Camera","Switching and playback from Elite Visual Services; prompter from K2 Productions; cameras, displays and show control from Digerati.");
+  h+='<div class="grid g3"><div class="card"><h4>Backstage tech row</h4><p class="small muted" style="margin:0">Playback · GFX 1/2 · GFX · Prompter · AI Tech · A2<br>Rec · CAM Switch · E2<br>LED rack + E2 rack</p></div><div class="card"><h4>FOH riser</h4><p class="small muted" style="margin:0">18\' × 8\' × 16"h at the back of house: Audio · Lighting · TD</p></div><div class="card"><h4>Cameras</h4><p class="small muted" style="margin:0">2 × UC4000 on 8\' × 6\' × 24" risers ≈ 90\' from stage; PTZ ≈ 105\'</p></div></div>';
+  h+='<h3>Gear</h3>'+gearTable("video")+openBlock(DEPT_FOR.video)+'<h3>Crew</h3>'+crewFor(["Video"]);
+  return h;
+};
+R.audio=function(){
+  var h=head("audio","Audio","PA updated Oct 8: 12 Berlin mains, 4 iQ12 stage mains and 4 JBL PRX 18\" subs.");
+  h+='<div class="grid g3"><div class="card"><h4>Mains</h4><div class="mono" style="font-size:22px;font-weight:600">12 × Berlin</div><p class="muted small" style="margin:4px 0 0">6 per side (L/R line arrays on CAD)</p></div><div class="card"><h4>Stage mains</h4><div class="mono" style="font-size:22px;font-weight:600">4 × iQ12</div><p class="muted small" style="margin:4px 0 0">Turbosound</p></div><div class="card"><h4>Subs</h4><div class="mono" style="font-size:22px;font-weight:600">4 × JBL PRX 18\"</div><p class="muted small" style="margin:4px 0 0">Downstage, per CAD</p></div></div>';
+  h+='<h3>Gear</h3>'+gearTable("audio")+openBlock(DEPT_FOR.audio)+'<h3>Crew</h3>'+crewFor(["Audio"]);
+  return h;
+};
+R.lighting=function(){
+  var h=head("lighting","Lighting","Rig is pulled from four sources: Immense AV, Rentex, Next Level AV (Nic Pagán) and PRG cable, plus our distro.");
+  h+='<div class="grid g3"><div class="card"><h4>Profiles</h4><div class="mono" style="font-size:22px;font-weight:600">10 × Diablo S</div><p class="muted small" style="margin:4px 0 0">Immense AV</p></div><div class="card"><h4>Washes</h4><div class="mono" style="font-size:22px;font-weight:600">10 × Impression X4</div><p class="muted small" style="margin:4px 0 0">Rentex · 2 spares on hand</p></div><div class="card"><h4>Movers</h4><div class="mono" style="font-size:22px;font-weight:600">16 × Rogue R1 Wash</div><p class="muted small" style="margin:4px 0 0">Next Level AV · Chauvet Professional</p></div></div>';
+  h+='<h3>Gear</h3>'+gearTable("lighting")+openBlock(DEPT_FOR.lighting)+'<h3>Crew</h3>'+crewFor(["Lighting"]);
+  return h;
+};
+R.staging=function(){
+  var h=head("staging","Staging & Rigging","Stage, drape and rigging from the CAD. "+(CREW?"Motor loads are from Tallen's v5 calc.":"Motor loads are Tallen's v5 calc on the original fixture list.")+"");
+  h+='<h3>Motor loads · DS truss (CAD sheet 4)</h3><div class="tw"><table><thead><tr><th>Point</th><th style="text-align:right">Load (lbf)</th></tr></thead><tbody>'+S.motors.map(function(m){return '<tr><td class="mono">'+m[0]+'</td><td class="q" style="width:auto">'+m[1]+'</td></tr>'}).join("")+'</tbody></table></div>';
+  h+='<h3>Gear</h3>'+gearTable("staging")+openBlock(DEPT_FOR.staging);
+  return h;
+};
+R.sourcing=function(){
+  var h=head("sourcing","Sourcing","Where every piece is coming from, with pickup and return windows. Gear lines below are grouped by source.");
+  if(editing){
+    h+='<div class="tw"><table><thead><tr><th>Code</th><th>Vendor</th><th>Reference</th><th>Dept</th><th>Contact</th><th>Location</th><th>Out</th><th>Back</th><th></th></tr></thead><tbody>'+
+    S.vendors.map(function(v,i){return '<tr>'+["code","name","ref","dept","contact","where","out","back"].map(function(k){return '<td><input id="v-'+i+'-'+k+'" data-bind="vendors.'+i+'.'+k+'" value="'+esc(v[k])+'"></td>'}).join("")+'<td><button class="rm" data-rm="vendors.'+i+'">×</button></td></tr>'}).join("")+
+    '</tbody></table></div><div style="margin-top:8px"><button class="btn" data-add="vendors">+ Add vendor</button></div>';
+  } else {
+    h+='<div class="grid g2">'+S.vendors.map(function(v){
+      var n=0;Object.keys(S.gear).forEach(function(k){S.gear[k].forEach(function(r){if(r.src===v.code&&!(CREW&&r.hide))n++})});
+      return '<div class="card"><div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><h4>'+esc(v.name)+'</h4><span class="pill info">'+esc(v.dept)+'</span></div><dl class="kv small"><dt>Ref</dt><dd>'+esc(v.ref)+'</dd><dt>Contact</dt><dd>'+esc(v.contact)+'</dd><dt>Location</dt><dd>'+esc(v.where)+'</dd>'+(v.out?'<dt>Out</dt><dd>'+esc(v.out)+'</dd>':'')+(v.back?'<dt>Back</dt><dd>'+esc(v.back)+'</dd>':'')+'<dt>Lines</dt><dd>'+n+' gear lines</dd></dl></div>'}).join("")+'</div>';
+  }
+  h+='<h3>All gear by source</h3><div class="tw"><table><thead><tr><th style="text-align:right">Qty</th><th>Item</th><th>Dept</th><th>Notes</th></tr></thead><tbody>';
+  var names={led:"LED",video:"Video",audio:"Audio",lighting:"Lighting",staging:"Staging"};
+  Object.keys(SRC).forEach(function(c){
+    var lines=[];Object.keys(S.gear).forEach(function(k){S.gear[k].forEach(function(r){if(r.src===c&&!(CREW&&r.hide))lines.push([k,r])})});
+    if(!lines.length)return;
+    h+='<tr class="grouprow"><td colspan="4">'+esc(SRC[c])+' · '+lines.length+' lines</td></tr>'+lines.map(function(l){return '<tr><td class="q">'+esc(l[1].qty)+'</td><td>'+esc(l[1].item)+'</td><td class="sub">'+names[l[0]]+'</td><td class="sub">'+esc(l[1].note)+'</td></tr>'}).join("");
+  });
+  return h+'</tbody></table></div>';
+};
+R.crew=function(){
+  var h=head("crew","Crew & Travel","Positions from the labor plan. Hotel is client-provided. Confirmation numbers get filled in as they come back.");
+  var cols=[["role","Role"],["name","Name"],["co","Company"],["phone","Phone"],["email","Email"],["arrive","Arrive"],["depart","Depart"],["flight","Flight conf."],["hotel","Hotel conf."],["note","Notes"]];if(editing)cols.splice(3,0,["dept","Dept"]),cols.push(["inote","Internal note"]);
+  if(editing){
+    h+='<div class="tw"><table><thead><tr>'+cols.map(function(c){return '<th>'+c[1]+'</th>'}).join("")+'<th></th></tr></thead><tbody>'+
+    S.crew.map(function(r,i){return '<tr>'+cols.map(function(c){return '<td><input id="c-'+i+'-'+c[0]+'" data-bind="crew.'+i+'.'+c[0]+'" value="'+esc(r[c[0]])+'"></td>'}).join("")+'<td><button class="rm" data-rm="crew.'+i+'">×</button></td></tr>'}).join("")+
+    '</tbody></table></div><div style="margin-top:8px"><button class="btn" data-add="crew">+ Add person</button></div>';
+  } else {
+    h+='<div class="tw"><table><thead><tr>'+cols.map(function(c){return '<th>'+c[1]+'</th>'}).join("")+'</tr></thead><tbody>'+
+    S.crew.map(function(r){return '<tr>'+cols.map(function(c){var v=r[c[0]];var cls=(c[0]==="flight"||c[0]==="hotel"||c[0]==="phone"||c[0]==="email")?' class="mono small"':(c[0]==="note"||c[0]==="co"?' class="sub"':'');if(c[0]==="note"&&!CREW&&r.inote)return '<td class="sub">'+esc(v||'')+' <span class="pill warn">'+esc(r.inote)+'</span></td>';
+      return '<td'+cls+'>'+(v?esc(v):(c[0]==="name"||c[0]==="flight"||c[0]==="hotel"?'<span class="muted">—</span>':''))+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table></div>';
+  }
+  h+=openBlock(["Travel","Schedule"],"Open travel items");
+  return h;
+};
+R.checks=function(){
+  var h=head("checks","Cross-check","Differences found comparing the CAD, our proposal and each vendor quote. Mark items resolved as they're answered.");
+  var depts=["All"].concat(Array.from(new Set(S.issues.map(function(i){return i.dept}))));
+  h+='<div class="filters" style="margin-bottom:12px">'+["open","resolved","all"].map(function(f){return '<button class="chip" data-if="'+f+'" aria-pressed="'+(issueFilter===f)+'">'+f[0].toUpperCase()+f.slice(1)+'</button>'}).join("")+
+  '<span style="width:12px"></span>'+depts.map(function(d){return '<button class="chip" data-idept="'+d+'" aria-pressed="'+((window.__idept||"All")===d)+'">'+d+'</button>'}).join("")+'</div>';
+  var dsel=window.__idept||"All";
+  var list=S.issues.map(function(x,i){x._i=i;return x}).filter(function(x){return (issueFilter==="all"||(issueFilter==="open"?x.status!=="resolved":x.status==="resolved"))&&(dsel==="All"||x.dept===dsel)});
+  var order={high:0,med:1,low:2};list.sort(function(a,b){return order[a.sev]-order[b.sev]});
+  h+=list.length?'<div class="stack" style="gap:8px">'+list.map(issueCard).join("")+'</div>':'<p class="muted">Nothing here.</p>';
+  if(editing)h+='<div style="margin-top:10px"><button class="btn" data-add="issues">+ Add item</button></div>';
+  return h;
+};
+R.brand=function(){
+  var h=head("brand","Brand & Files","Nixon Peabody brand guide (Feb 2025) and fonts for GFX and content. Headlines: Tiempos Headline. Body: Soleil. Fallbacks: Palatino Linotype / Arial.",fileBtn("allDraw","Download drawings")+fileBtn("allBrand","Download brand package"));
+  var cols=[["Azure","#28519D"],["Verde","#188369"],["Cerise","#D33867"],["Plum","#5F2C8F"],["Light Azure","#D5F1FE"],["Light Verde","#D1F4EC"],["Light Cerise","#FAD8E3"],["Light Plum","#E7D8F7"],["Black","#1A1B2E"],["Gray","#596267"],["Dove","#E2E4E4"],["Frost","#F6F6F6"]];
+  h+='<h3>Digital palette · tap to copy</h3><div class="sw">'+cols.map(function(c){return '<button class="c" data-hex="'+c[1]+'"><i style="background:'+c[1]+'"></i><span><b>'+c[0]+'</b><br><span class="mono">'+c[1]+'</span></span></button>'}).join("")+'</div>';
+  h+='<div class="note" style="margin-top:12px">Logo: light Spark with the logotype in the darker color. Don\'t recolor, rotate, add effects or place on busy backgrounds. Brand photography uses NP people only — no stock faces.</div>';
+  h+='<h3>All files</h3><div class="files">'+["allDraw","allBrand","cad","ledMap","brand","fonts"].map(docRow).join("")+'</div>';
+  h+='<p class="muted small" style="margin-top:10px">Fonts are Nixon Peabody\'s licensed copies, shared for this show\'s content only.</p>';
+  return h;
+};
+
+/* ---------- shell ---------- */
+function current(){var h=(location.hash||"").replace("#","");return SECTIONS.some(function(s){return s.id===h})?h:"overview"}
+function render(){
+  var cur=current();
+  var navH="",grp=null;
+  SECTIONS.forEach(function(s){
+    if(s.grp!==grp){navH+='<div class="grp">'+s.grp+'</div>';grp=s.grp}
+    var n=CREW?0:(DEPT_FOR[s.id]?openCount(DEPT_FOR[s.id]):(s.id==="checks"?openCount():0));
+    navH+='<a href="#'+s.id+'" aria-current="'+(s.id===cur)+'">'+s.t+(n?'<span class="pill '+(s.id===cur?'':'warn')+'">'+n+'</span>':'')+'</a>';
+  });
+  var load=new Date(S.show.loadIn),days=Math.ceil((load-new Date())/864e5);
+  var countTxt=days>0?days+(days===1?" day":" days"):(days>-4?"Show week":"Wrapped");
+  var app=$("#app");
+  var y=window.scrollY;
+  app.innerHTML='<header class="band"><div class="band-in"><div style="min-width:0"><div class="eyebrow">Digerati Productions · '+(CREW?"Crew show book":"Dashboard · private")+'</div><h1>'+esc(S.show.client)+' · Chicago</h1><div class="sub"><b>'+esc(S.show.event)+'</b> · '+esc(S.show.venue)+', '+esc(S.show.room)+' · Oct 14–17, 2026</div></div>'+
+  '<div class="count"><div><div class="k">Load-in</div><div class="v">'+countTxt+'</div></div>'+(CREW?'':'<div><div class="k">Open items</div><div class="v">'+openCount()+'</div></div>')+
+  '<div class="tools">'+(!CREW&&canWrite===true&&art?'<button class="btn'+(editing?' primary':'')+'" data-edit>'+ICON.edit+(editing?'Editing':'Edit')+'</button>':'')+'</div></div></div></header>'+
+  '<div class="shell"><nav class="rail" aria-label="Sections">'+navH+'</nav><main id="main">'+R[cur]()+'</main></div>'+
+  (editing?'<div class="editbar"><span>'+(dirty?'Unsaved changes — Save updates the page for everyone with the link.':'Edit mode — change any table, then save.')+'</span><span class="tools"><button class="btn" data-cancel>Discard</button><button class="btn primary" data-save>Save</button></span></div>':'');
+  window.scrollTo(0,y);
+}
+function setPath(path,val){var p=path.split("."),o=S;for(var i=0;i<p.length-1;i++)o=o[p[i]];o[p[p.length-1]]=val}
+function getPath(path){var p=path.split("."),o=S;for(var i=0;i<p.length;i++)o=o[p[i]];return o}
+var BLANK={crew:{role:"",dept:"Video",name:"",co:"",phone:"",email:"",inote:"",arrive:"",depart:"",flight:"",hotel:"",note:""},updates:function(){return {date:new Date().toLocaleDateString("en-US",{month:"short",day:"numeric"}),text:""}},
+  issues:{dept:"Video",sev:"med",status:"open",title:"New item",detail:""},vendors:{code:"",name:"",ref:"",dept:"",contact:"",where:"",out:"",back:""}};
+
+/* lightbox */
+var LB=null;
+function groupList(g){return g==="renders"?RENDERS:g==="ledimg"?LEDIMG:CAD.map(function(c){return {src:"files/cad-page-"+c.n+".jpg",t:"Sheet "+c.n+" · "+c.t}})}
+function openLB(g,i){
+  var list=groupList(g);LB={g:g,i:i,list:list,actual:false};
+  var el=document.createElement("div");el.className="lb";el.id="lb";el.setAttribute("role","dialog");el.setAttribute("aria-modal","true");
+  document.body.appendChild(el);drawLB();document.body.style.overflow="hidden";
+}
+function drawLB(){
+  var el=$("#lb"),it=LB.list[LB.i];
+  el.innerHTML='<div class="lb-top"><span class="t">'+esc(it.t)+' <span style="opacity:.6;font-weight:400">'+(LB.i+1)+' / '+LB.list.length+'</span></span><span class="tools"><button class="btn" data-lbz>'+(LB.actual?"Fit to screen":"Actual size")+'</button><button class="btn" data-lbfs>'+ICON.full+'Full screen</button><a class="btn" href="'+it.src+'" target="_blank" rel="noopener">'+ICON.open+'Open</a><button class="btn" data-lbx aria-label="Close">Close</button></span></div>'+
+  '<div class="lb-stage'+(LB.actual?" actual":"")+'"><img src="'+it.src+'" alt="'+esc(it.t)+'"></div>'+
+  (LB.list.length>1?'<button class="lb-nav lb-prev" data-lbp aria-label="Previous">‹</button><button class="lb-nav lb-next" data-lbn aria-label="Next">›</button>':'');
+}
+function closeLB(){var el=$("#lb");if(el)el.remove();LB=null;document.body.style.overflow="";try{if(document.fullscreenElement)document.exitFullscreen()}catch(e){}}
+
+/* downloads */
+function download(k){
+  var f=FILES[k];
+  if(!dl){
+    if(f.path){window.open(f.path,"_blank")}else{toast("Downloads aren't available in this view. Open the page in Claude to get the .zip.")}
+    return;
+  }
+  var name=f.path?f.path.split("/").pop():f.zip;
+  toast("Preparing "+name+"…");
+  var job;
+  if(f.bundle){
+    if(!window.JSZip){toast("Zip tool didn't load — try again in a moment.");return}
+    var z=new JSZip(),root=f.zip.replace(/\.zip$/,"");
+    job=Promise.all(f.bundle.map(function(p){return fetch(p).then(function(r){if(!r.ok)throw new Error(p);return r.blob()}).then(function(b){z.file(root+"/"+p.replace(/^files\//,""),b)})}))
+      .then(function(){return z.generateAsync({type:"blob"})});
+  } else {
+    job=fetch(f.path).then(function(r){if(!r.ok)throw new Error("fetch");return r.blob()});
+  }
+  job.then(function(b){return dl.save({filename:name,data:b})}).then(function(){},function(e){
+    if(e&&e.code==="declined")return;
+    toast(f.path?"Download didn't start — use Open instead.":"Couldn't build the zip — try again.");
+  });
+}
+/* publish */
+function save(){
+  if(!art||CREW)return;
+  S.savedAt=new Date().toISOString();
+  var json=JSON.stringify(S,function(k,v){return k==="_i"?undefined:v},1);
+  toast("Saving…");
+  art.publish({"data/show.json":{content:json,contentType:"application/json"}}).then(function(){
+    dirty=false;editing=false;toast("Saved — everyone with the link sees it now");render();
+  },function(e){
+    var c=e&&e.code;
+    if(c==="conflict"){toast("Someone else saved first — reloading their version.");return}
+    if(c==="not_writer"||c==="not_granted"||c==="not_declared"||c==="capability_disabled"){canWrite=false;editing=false;render();toast("Saving isn't available in this view.");return}
+    toast("Couldn't save ("+(c||"error")+"). Your edits are still here — try Save again.");
+  });
+}
+
+document.addEventListener("click",function(ev){
+  var t=ev.target.closest("button,a");if(!t)return;
+  if(t.hasAttribute("data-copy")){copy(linkFor(t.getAttribute("data-copy")),"Link copied — send it to the team");return}
+  if(t.hasAttribute("data-dl")){download(t.getAttribute("data-dl"));return}
+  if(t.hasAttribute("data-lb")){openLB(t.getAttribute("data-lb"),+t.getAttribute("data-i"));return}
+  if(t.hasAttribute("data-lbx")){closeLB();return}
+  if(t.hasAttribute("data-lbn")){LB.i=(LB.i+1)%LB.list.length;LB.actual=false;drawLB();return}
+  if(t.hasAttribute("data-lbp")){LB.i=(LB.i-1+LB.list.length)%LB.list.length;LB.actual=false;drawLB();return}
+  if(t.hasAttribute("data-lbz")){LB.actual=!LB.actual;drawLB();return}
+  if(t.hasAttribute("data-lbfs")){var el=$("#lb");try{var p=el.requestFullscreen&&el.requestFullscreen();if(p&&p.catch)p.catch(function(){toast("Full screen isn't available here")})}catch(e){toast("Full screen isn't available here")}return}
+  if(t.hasAttribute("data-hex")){copy(t.getAttribute("data-hex"),t.getAttribute("data-hex")+" copied");return}
+  if(t.hasAttribute("data-if")){issueFilter=t.getAttribute("data-if");render();return}
+  if(t.hasAttribute("data-idept")){window.__idept=t.getAttribute("data-idept");render();return}
+  if(t.hasAttribute("data-dept")){window.__idept=t.getAttribute("data-dept");issueFilter="open";return}
+  if(t.hasAttribute("data-edit")){editing=!editing;render();return}
+  if(t.hasAttribute("data-cancel")){if(dirty){location.reload()}else{editing=false;render()}return}
+  if(t.hasAttribute("data-save")){save();return}
+  if(t.hasAttribute("data-toggle")){var x=S.issues[+t.getAttribute("data-toggle")];x.status=x.status==="resolved"?"open":"resolved";dirty=true;render();return}
+  if(t.hasAttribute("data-rm")){var p=t.getAttribute("data-rm").split("."),idx=+p.pop(),arr=getPath(p.join("."));arr.splice(idx,1);dirty=true;render();return}
+  if(t.hasAttribute("data-add")){var path=t.getAttribute("data-add"),a=getPath(path),root=path.split(".")[0],b;
+    if(root==="gear"){var last=a[a.length-1]||{};b={g:last.g||"New",qty:"1",item:"",src:"DIG",note:""}}else{b=typeof BLANK[root]==="function"?BLANK[root]():JSON.parse(JSON.stringify(BLANK[root]))}
+    a.push(b);dirty=true;render();return}
+});
+document.addEventListener("input",function(ev){var t=ev.target;if(t.hasAttribute&&t.hasAttribute("data-bind")){setPath(t.getAttribute("data-bind"),t.value);if(!dirty){dirty=true;var bar=$(".editbar span");if(bar)bar.textContent="Unsaved changes — Save updates the page for everyone with the link."}}});
+document.addEventListener("change",function(ev){var t=ev.target;if(t.hasAttribute&&t.hasAttribute("data-check")){setPath(t.getAttribute("data-check"),t.checked);dirty=true;return}if(t.tagName==="SELECT"&&t.hasAttribute("data-bind")){setPath(t.getAttribute("data-bind"),t.value);dirty=true}});
+document.addEventListener("keydown",function(ev){if(!LB)return;if(ev.key==="Escape")closeLB();if(ev.key==="ArrowRight"&&LB.list.length>1){LB.i=(LB.i+1)%LB.list.length;drawLB()}if(ev.key==="ArrowLeft"&&LB.list.length>1){LB.i=(LB.i-1+LB.list.length)%LB.list.length;drawLB()}});
+window.addEventListener("hashchange",function(){render();window.scrollTo(0,0)});
+window.addEventListener("beforeunload",function(e){if(dirty){e.preventDefault();e.returnValue=""}});
+
+render();
+fetch("data/show.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(d&&!dirty){S=d;render()}},function(){});
+if(SITE){dl={save:function(o){var u=URL.createObjectURL(o.data instanceof Blob?o.data:new Blob([o.data]));var a=document.createElement("a");a.href=u;a.download=o.filename;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},8000);return Promise.resolve()}}}
+var tries=0;
+(function boot(){
+if(SITE)return;
+if(CREW){if(window.claude&&window.claude.use){window.claude.use("downloads").then(function(d){dl=d},function(){})}else if(++tries<20)setTimeout(boot,250);return}
+if(!(window.claude&&window.claude.use)){if(++tries<20)setTimeout(boot,250);return}
+  Promise.all([window.claude.use("artifact"),window.claude.use("user").then(function(u){return u?u.canEdit():false},function(){return false})]).then(function(r){
+    art=r[0];canWrite=!!r[1];if(art&&canWrite)render();
+  },function(){});
+  window.claude.use("downloads").then(function(d){dl=d},function(){});
+})();
+})();
+</script>
+</body></html>
