@@ -13,24 +13,6 @@
  },
  "schedule": [
   {
-   "date": "2026-10-07",
-   "label": "Prep",
-   "kind": "prep",
-   "items": [
-    "Gig Rent LED prep begins 1:00 PM (Orlando)"
-   ]
-  },
-  {
-   "date": "2026-10-08",
-   "label": "Pickups",
-   "kind": "prep",
-   "items": [
-    "Rentex will call 9–11 AM (GLP X4)",
-    "PRG will call 3:00 PM (cable)",
-    "Immense AV rental starts (Diablo S)"
-   ]
-  },
-  {
    "date": "2026-10-13",
    "label": "Travel",
    "kind": "travel",
@@ -82,17 +64,6 @@
    "kind": "travel",
    "items": [
     "Crew travel home"
-   ]
-  },
-  {
-   "date": "2026-10-20",
-   "label": "Returns",
-   "kind": "prep",
-   "items": [
-    "Rentex return 9–11 AM",
-    "PRG pickup 11 AM–12 PM",
-    "Immense AV due 8:00 AM",
-    "Gig Rent de-prep ends 10/21 11 AM"
    ]
   }
  ],
@@ -148,147 +119,126 @@
     "g": "Main wall — 36 × 9 tiles (bottom row inactive lifter)",
     "qty": "144",
     "item": "ESD Pilot 2.6mm LED tile, full 500 × 1000mm",
-    "src": "GIG",
     "note": "192 × 384 px each"
    },
    {
     "g": "Main wall — 36 × 9 tiles (bottom row inactive lifter)",
     "qty": "36",
     "item": "ESD Pilot 2.6mm LED tile, half 500 × 500mm",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Main wall — 36 × 9 tiles (bottom row inactive lifter)",
     "qty": "19",
     "item": "4M Pilot 2.6 ground support",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Side screens — 2 × (8 × 9 tiles)",
     "qty": "64",
     "item": "ESD Pilot 2.6mm LED tile, full 500 × 1000mm",
-    "src": "GIG",
     "note": "32 per side"
    },
    {
     "g": "Side screens — 2 × (8 × 9 tiles)",
     "qty": "16",
     "item": "ESD Pilot 2.6mm LED tile, half 500 × 500mm",
-    "src": "GIG",
     "note": "8 per side"
    },
    {
     "g": "Side screens — 2 × (8 × 9 tiles)",
     "qty": "8",
     "item": "4M Pilot 2.6 ground support",
-    "src": "GIG",
     "note": "4 per side"
    },
    {
     "g": "Processing & signal",
     "qty": "2",
     "item": "Novastar MX2000 Pro processor",
-    "src": "GIG",
     "note": "Primary + backup"
    },
    {
     "g": "Processing & signal",
     "qty": "2",
     "item": "Novastar input card, HDMI 2.0",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Processing & signal",
     "qty": "2",
     "item": "Novastar input card, DP 1.2",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Processing & signal",
     "qty": "2",
     "item": "Novastar output card, 10G SFP",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Processing & signal",
     "qty": "10",
     "item": "Novastar CVT10-S fiber converter (5 kits)",
-    "src": "GIG",
     "note": "5 runs × primary/backup"
    },
    {
     "g": "Processing & signal",
     "qty": "6",
     "item": "TAC 4 LC fiber, 245'",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Processing & signal",
     "qty": "10",
     "item": "10GTEK SFP BiDi TX/RX",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Processing & signal",
     "qty": "1",
     "item": "Blackmagic Mini Converter Sync Generator",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Processing & signal",
     "qty": "1",
     "item": "LED laptop (ThinkPad) — VMP 1.5.1, NovaLCT 5.9.1",
-    "src": "GIG",
     "note": "+ TP-Link AX3000 router"
    },
    {
     "g": "Processing & signal",
     "qty": "75",
     "item": "Ethercon to Ethernet, 25'",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "1",
     "item": "LEX Viceroy distro rack (4 × Soca, 3 × L21, 6 × Edison)",
-    "src": "GIG",
     "note": "+ 2/0 feeder set 10'"
    },
    {
     "g": "Power",
     "qty": "4",
     "item": "Socapex 14c, 100'",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "5",
     "item": "Soca M → 6 × PowerCon fanout (24', staggered)",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "10",
     "item": "True1 → Edison (M), 5'",
-    "src": "GIG",
     "note": ""
    },
    {
     "g": "Tools",
     "qty": "1",
     "item": "LED tool kit + 5 never-ending ratchet straps",
-    "src": "GIG",
     "note": ""
    }
   ],
@@ -297,189 +247,162 @@
     "g": "Switching",
     "qty": "1",
     "item": "Barco E2 Gen 2 — dual tricombo out + HDMI 2.0 out, 40×40 3G router, EC-30, dual UPS",
-    "src": "ELITE",
     "note": "Mac + Dell GUI laptops"
    },
    {
     "g": "Switching",
     "qty": "1",
     "item": "Barco E2 tricombo rack — 16×32 3G router, 2200VA UPS, Stream Deck XL",
-    "src": "ELITE",
     "note": ""
    },
    {
     "g": "Switching",
     "qty": "1",
     "item": "E2 workbox — patch, converters, cables ≤ 50'",
-    "src": "ELITE",
     "note": ""
    },
    {
     "g": "Switching",
     "qty": "1",
     "item": "8×8 HDMI 4K 4:4:4 router w/ per-output downscalers",
-    "src": "ELITE",
     "note": "Multiview distro"
    },
    {
     "g": "Playback",
     "qty": "2",
     "item": "Apple Mac Studio M2, 64GB, dual 24\" 4K monitors, 10G switch",
-    "src": "ELITE",
     "note": "Millumin"
    },
    {
     "g": "Playback",
     "qty": "1",
     "item": "PC server i9 / 64GB / RTX 3080 Ti",
-    "src": "ELITE",
     "note": "Hi-res PowerPoint"
    },
    {
     "g": "Playback",
     "qty": "2",
     "item": "Alienware M15 R6, i7 / RTX 3070",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Playback",
     "qty": "5",
     "item": "Dell Latitude E5420 laptops",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Signal",
     "qty": "1",
     "item": "FOH fiber kit — 660' 12-strand SM LC; 3 HDMI, 4 3G-SDI, 1 × 1G net, 1 × 4K HDMI",
-    "src": "ELITE",
     "note": ""
    },
    {
     "g": "Signal",
     "qty": "1",
     "item": "Large video cable package (4K)",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Signal",
     "qty": "1",
     "item": "USB extender over CAT5 package",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Displays",
     "qty": "3",
     "item": "60\" confidence monitor w/ hard doghouse",
-    "src": "DIG",
     "note": "DSM ×3 on CAD"
    },
    {
     "g": "Displays",
     "qty": "1",
     "item": "86\" LG 4K monitor, flown on truss",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Displays",
     "qty": "2",
     "item": "50\" monitor on pole stand, black spandex",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Displays",
     "qty": "2",
     "item": "Samsung 32\" 4K preview",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Displays",
     "qty": "3",
     "item": "Samsung 27\" preview",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Displays",
     "qty": "2",
     "item": "43\" 4K multiview kit (E2 + Milli MV)",
-    "src": "ELITE",
     "note": ""
    },
    {
     "g": "Displays",
     "qty": "1",
     "item": "Samsung 32\" multiview (GFX MV + FOH MV)",
-    "src": "ELITE",
     "note": ""
    },
    {
     "g": "Show control",
     "qty": "1",
     "item": "DSAN PerfectCue Mini + 4-port cue light hub",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Show control",
     "qty": "1",
     "item": "DSAN wireless speaker timer, large display",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Teleprompter",
     "qty": "1",
     "item": "Public speaking kit — main + backup computers, HDMI switcher, converters",
-    "src": "K2",
     "note": "Op: Linda Morrison"
    },
    {
     "g": "Camera",
     "qty": "2",
     "item": "Panasonic AK-UC4000 w/ CCU + 36× lens",
-    "src": "DIG",
     "note": "Tripod + operator platform"
    },
    {
     "g": "Camera",
     "qty": "2",
     "item": "Panasonic AW-UE150 4K60 PTZ + tripod stands",
-    "src": "DIG",
     "note": "PoE++"
    },
    {
     "g": "Camera",
     "qty": "1",
     "item": "Panasonic AW-RP150 PTZ controller",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Camera",
     "qty": "1",
     "item": "Blackmagic ATEM SDI Extreme ISO + 24\" preview",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Camera",
     "qty": "2",
     "item": "Blackmagic 4K Assist / HyperDeck Mini record (main + backup)",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Camera",
     "qty": "1",
     "item": "5-port gigabit switch + Core SWX SPU-4 supplies",
-    "src": "DIG",
     "note": ""
    }
   ],
@@ -488,77 +411,66 @@
     "g": "PA",
     "qty": "12",
     "item": "Turbosound Berlin 12\" line array",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "PA",
     "qty": "4",
     "item": "Turbosound iQ12 — stage mains",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "PA",
     "qty": "4",
     "item": "JBL PRX 18\" subwoofer",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "PA",
     "qty": "4",
     "item": "Berlin line array fly hardware",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "PA",
     "qty": "2",
     "item": "QSC K8 — foldback",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Console & RF",
     "qty": "1",
     "item": "Allen & Heath SQ-5 + snake",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Console & RF",
     "qty": "1",
     "item": "Shure ULXD 12-ch wireless combo w/ DA + paddles",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Console & RF",
     "qty": "1",
     "item": "Dante network kit",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Console & RF",
     "qty": "1",
     "item": "Clear-Com Arcadia, 15-pack",
-    "src": "DIG",
     "note": "Comms"
    },
    {
     "g": "Support",
     "qty": "2",
     "item": "Floor mic stand",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Support",
     "qty": "1",
     "item": "AES/XLR cable kit + GS audio workbox",
-    "src": "DIG",
     "note": ""
    }
   ],
@@ -567,98 +479,84 @@
     "g": "Fixtures",
     "qty": "10",
     "item": "Ayrton Diablo S — LED profile w/ framing shutters",
-    "src": "IMMENSE",
     "note": "5 kits of 2"
    },
    {
     "g": "Fixtures",
     "qty": "10",
     "item": "GLP Impression X4 wash",
-    "src": "RENTEX",
-    "note": "10 in the rig + 2 spares (12 rented)"
+    "note": "10 in the rig + 2 spares"
    },
    {
     "g": "Fixtures",
     "qty": "16",
     "item": "Chauvet Professional Rogue R1 Wash",
-    "src": "NIC",
-    "note": "Next Level AV (Nic Pagán)"
+    "note": ""
    },
    {
     "g": "Control",
     "qty": "1",
     "item": "High End Hedgehog 4X + preview monitor",
-    "src": "DIG",
     "note": "+ Samsung 27\" preview"
    },
    {
     "g": "Control",
     "qty": "1",
     "item": "Obsidian Onyx NX Wing 16U console",
-    "src": "NIC",
-    "note": "From Next Level AV"
+    "note": ""
    },
    {
     "g": "Control",
     "qty": "1",
     "item": "Lighting workbox",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Data",
     "qty": "20",
     "item": "5-pin DMX, 100' (red)",
-    "src": "PRG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "1",
     "item": "200A 3Ø distro w/ Socapex + L21-30",
-    "src": "DIG",
     "note": "100' feeder, 3 × L21 breakout boxes"
    },
    {
     "g": "Power",
     "qty": "4",
     "item": "Socapex 19-pin 12/14, 100'",
-    "src": "PRG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "6",
     "item": "Socapex 19-pin 12/14, 50'",
-    "src": "PRG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "4",
     "item": "Socapex 19-pin 12/14, 25'",
-    "src": "PRG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "6",
     "item": "Soca M → 6 × Edison F breakout, staggered",
-    "src": "PRG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "4",
     "item": "L21-30 10/5, 100'",
-    "src": "PRG",
     "note": ""
    },
    {
     "g": "Power",
     "qty": "4",
     "item": "L21-30 8/5, 50'",
-    "src": "PRG",
     "note": ""
    }
   ],
@@ -667,63 +565,54 @@
     "g": "Drape & scenic",
     "qty": "1",
     "item": "Black pipe & drape 9'6\"–20'h × 60'w",
-    "src": "DIG",
     "note": "24\" 65 lb bases + 25 lb weight"
    },
    {
     "g": "Drape & scenic",
     "qty": "1",
     "item": "Black pipe & drape 9'6\"–20'h × 100'w",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Drape & scenic",
     "qty": "1",
     "item": "Roll of black duvetyne",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Floor",
     "qty": "10",
     "item": "Cable ramp",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Floor",
     "qty": "2",
     "item": "10' ladder",
-    "src": "DIG",
     "note": ""
    },
    {
     "g": "Rigging",
     "qty": "8",
     "item": "½-ton CM Prostar motor",
-    "src": "TALLEN",
     "note": ""
    },
    {
     "g": "Rigging",
     "qty": "14",
     "item": "12\" × 12\" box truss, 10' straight",
-    "src": "TALLEN",
     "note": ""
    },
    {
     "g": "Rigging",
     "qty": "1",
     "item": "4-way corner block",
-    "src": "TALLEN",
     "note": ""
    },
    {
     "g": "Office",
     "qty": "12",
     "item": "Table power pack",
-    "src": "DIG",
     "note": "6 office, 6 business center"
    }
   ]
@@ -762,98 +651,7 @@
    "500.35"
   ]
  ],
- "vendors": [
-  {
-   "code": "DIG",
-   "name": "Digerati Productions (our warehouse)",
-   "ref": "Proposal 26-0951 (gear) · 26-0953 (labor)",
-   "dept": "All",
-   "contact": "Brian Heffle, gear coordinator · 407-463-9657",
-   "where": "4455 Dardanelle Dr, Suite A, Orlando, FL 32808",
-   "out": "",
-   "back": ""
-  },
-  {
-   "code": "GIG",
-   "name": "Gig Rent",
-   "ref": "Quote 26-0882 · Confirmed",
-   "dept": "LED",
-   "contact": "Matthew Certa · 407-557-9922",
-   "where": "Will call — 851 Gills Dr, Suite 900, Orlando, FL 32824",
-   "out": "Prep from 10/7 1:00 PM · ships dedicated 53' semi",
-   "back": "De-prep ends 10/21 11:00 AM"
-  },
-  {
-   "code": "ELITE",
-   "name": "Elite Visual Services",
-   "ref": "Estimate 2026064",
-   "dept": "Video",
-   "contact": "Hollywood, FL",
-   "where": "Ships to and from Digerati",
-   "out": "Operator travels 10/13",
-   "back": "Operator travels 10/18"
-  },
-  {
-   "code": "RENTEX",
-   "name": "Rentex Orlando",
-   "ref": "Ref 554967 — Impression X4",
-   "dept": "Lighting",
-   "contact": "Adam Sufka · 407-450-1953",
-   "where": "Will call — 9664 Oak Crossing Rd, Suite 800, Orlando, FL 32837",
-   "out": "10/8, 9–11 AM",
-   "back": "10/20, 9–11 AM"
-  },
-  {
-   "code": "IMMENSE",
-   "name": "Immense Audio Visual",
-   "ref": "Quote 544 — DIG261008 261013",
-   "dept": "Lighting",
-   "contact": "407-349-7315 · info@immenseav.com",
-   "where": "3860 Bengert St, Orlando, FL 32808",
-   "out": "10/8",
-   "back": "10/20, 8:00 AM"
-  },
-  {
-   "code": "PRG",
-   "name": "PRG Orlando",
-   "ref": "Job 1513508",
-   "dept": "Lighting",
-   "contact": "Freddy Rodriguez · 407-855-8060",
-   "where": "Will call — 8063 Beacon Lake Dr, Suite 100, Orlando, FL 32809",
-   "out": "10/8, 3:00 PM",
-   "back": "Pickup 10/20, 11 AM–12 PM"
-  },
-  {
-   "code": "NIC",
-   "name": "Next Level Audio Visual (Nic Pagán)",
-   "ref": "Estimate 2026107 — R1 Wash + Onyx console",
-   "dept": "Lighting",
-   "contact": "Nic Pagán · 863-308-2934",
-   "where": "5550 Superior Dr, Lakeland, FL 33805",
-   "out": "Advance prep; rental from 10/9 · delivery included",
-   "back": "10/20 · pickup included"
-  },
-  {
-   "code": "K2",
-   "name": "K2 Productions",
-   "ref": "Estimate 3409",
-   "dept": "Video",
-   "contact": "Katie · 404-819-9438 · katie@k2-productions.com",
-   "where": "Atlanta, GA",
-   "out": "Op on site 10/14–10/17",
-   "back": ""
-  },
-  {
-   "code": "TALLEN",
-   "name": "Tallen (Hyatt in-house)",
-   "ref": "SO# 551963",
-   "dept": "Venue",
-   "contact": "CAD: Matt Waldner",
-   "where": "Hyatt Regency Chicago",
-   "out": "",
-   "back": ""
-  }
- ],
+ "vendors": [],
  "crew": [
   {
    "role": "Engineer in Charge (EIC)",
@@ -879,7 +677,7 @@
    "depart": "10/18",
    "flight": "",
    "hotel": "",
-   "note": "Runs E2; Elite switching + playback package"
+   "note": "Runs E2"
   },
   {
    "role": "LED Engineer",
@@ -987,29 +785,8 @@
   }
  ],
  "issues": [],
- "updates": [
-  {
-   "date": "Oct 8",
-   "text": "Audio: switching from all-Berlin to 12 Berlin + 4 Turbosound iQ12 front fills for better front-row coverage."
-  },
-  {
-   "date": "Oct 8",
-   "text": "Lighting: Nic Pagan is supplying 16 Chauvet Rogue R1."
-  },
-  {
-   "date": "Oct 8",
-   "text": "Audio: iQ12s are stage mains. Subs are JBL PRX 18\"."
-  },
-  {
-   "date": "Oct 8",
-   "text": "Lighting: 16 Chauvet Rogue R1 Wash plus an Onyx NX Wing console from Next Level AV. 10 of the 12 GLP Impression X4s go in the rig; 2 are spares."
-  },
-  {
-   "date": "Oct 8",
-   "text": "Crew confirmed: Jonathan Fuller (Video/E2), Anthony Pouparina (LED), Mat Rosario (Media Server), Ercel Abbott (Audio), Nic Pagán (Lighting), Drew Bunner. Call times updated from the labor POs."
-  }
- ],
+ "updates": [],
  "crewUrl": "",
- "crewSyncedAt": "2026-10-08T14:56:50.597973+00:00",
+ "crewSyncedAt": "2026-10-08T17:25:42.151943+00:00",
  "savedAt": ""
 }
