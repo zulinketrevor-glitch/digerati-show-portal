@@ -200,7 +200,7 @@ var FILES={
  ledMap:{name:"LED pixel map + Novastar layout",path:"files/LED-Pixel-Map.pdf",size:"1.7 MB"},
  brand:{name:"Nixon Peabody brand guidelines (Feb 2025)",path:"files/NP-Brand-Guidelines-2025.pdf",size:"2.6 MB"},
  fonts:{name:"Brand fonts — Tiempos Headline (12) + Soleil (17), OTF",zip:"NP-Brand-Fonts-Tiempos-Soleil.zip",bundle:FONTS,size:"≈ 4 MB zip"},
- allDraw:{name:"Everything visual — CAD, LED PDFs, renderings",zip:"NP-Chicago-Drawings-and-Renders.zip",bundle:["files/NP-Chicago-CAD-v5.pdf",  "files/LED-Pixel-Map.pdf", "files/render-stage-elevation.jpg", "files/render-house-view.jpg", "files/render-stage-pov.jpg"],size:"≈ 13 MB zip"},
+ allDraw:{name:"Everything visual — CAD, LED PDFs, renderings",zip:"NP-Chicago-Drawings-and-Renders.zip",bundle:["files/NP-Chicago-CAD-v5.pdf",  "files/LED-Pixel-Map.pdf", "files/render-stage-elevation.jpg", "files/render-house-view.jpg", "files/render-stage-pov.jpg","files/boh-layout.jpg"],size:"≈ 13 MB zip"},
  allBrand:{name:"Brand package — guidelines + fonts",zip:"NP-Chicago-Brand-Package.zip",bundle:["files/NP-Brand-Guidelines-2025.pdf"].concat(FONTS),size:"≈ 7 MB zip"}
 };
 var RENDERS=[
@@ -212,6 +212,7 @@ var CAD=[
  {n:1,t:"Floor plan — seating (719)"},{n:2,t:"Elevation + section"},{n:3,t:"Production plan"},
  {n:4,t:"Rigging + motor loads"},{n:5,t:"LED surface map"},{n:6,t:"Teleprompter + stage views"}
 ];
+var BOH=[{src:"files/boh-layout.jpg",t:"Back of house layout — tech tables, racks and A2",wide:true}];
 var LEDIMG=[{src:"files/led-map-1.jpg",t:"Pixel map — 9984 × 1728 canvas",wide:true},{src:"files/led-map-2.jpg",t:"Fiber + MX2000 output layout",wide:true}];
 var SECTIONS=[
  {id:"overview",t:"Overview",grp:"Show"},
@@ -387,7 +388,8 @@ R.led=function(){
 };
 R.video=function(){
   var h=head("video","Video & Camera","Switching, playback, prompter, cameras, displays and show control.");
-  h+='<div class="grid g3"><div class="card"><h4>Backstage tech row</h4><p class="small muted" style="margin:0">Playback · GFX 1/2 · GFX · Prompter · AI Tech · A2<br>Rec · CAM Switch · E2<br>LED rack + E2 rack</p></div><div class="card"><h4>FOH riser</h4><p class="small muted" style="margin:0">18\' × 8\' × 16"h at the back of house: Audio · Lighting · TD</p></div><div class="card"><h4>Cameras</h4><p class="small muted" style="margin:0">2 × UC4000 on 8\' × 6\' × 24" risers ≈ 90\' from stage; PTZ ≈ 105\'</p></div></div>';
+  h+='<div class="grid g3"><div class="card"><h4>Back of house</h4><p class="small muted" style="margin:0">Upstage row: Playback · GFX · racks (Wide GFX, E2 1, E2 2, LED Proc) · E2 · Prompter<br>Downstage row: REC · Cam Switch · AI Tech<br>A2 angled at the drape line</p></div><div class="card"><h4>FOH riser</h4><p class="small muted" style="margin:0">18\' × 8\' × 16"h at the back of house: Audio · Lighting · TD</p></div><div class="card"><h4>Cameras</h4><p class="small muted" style="margin:0">2 × UC4000 on 8\' × 6\' × 24" risers ≈ 90\' from stage; PTZ ≈ 105\'</p></div></div>';
+  h+='<h3>Back of house layout</h3><button class="hero-shot" data-lb="boh" data-i="0" style="background:#fff"><img src="files/boh-layout.jpg" alt="Back of house layout: tech tables, racks and A2 position"></button><p class="muted small" style="margin:6px 0 0">Tap to view full screen.</p>';
   h+='<h3>Gear</h3>'+gearTable("video")+openBlock(DEPT_FOR.video)+'<h3>Crew</h3>'+crewFor(["Video"]);
   return h;
 };
@@ -494,7 +496,7 @@ var BLANK={crew:{role:"",dept:"Video",name:"",co:"",phone:"",email:"",inote:"",a
 
 /* lightbox */
 var LB=null;
-function groupList(g){return g==="renders"?RENDERS:g==="ledimg"?LEDIMG:CAD.map(function(c){return {src:"files/cad-page-"+c.n+".jpg",t:"Sheet "+c.n+" · "+c.t}})}
+function groupList(g){return g==="renders"?RENDERS:g==="ledimg"?LEDIMG:g==="boh"?BOH:CAD.map(function(c){return {src:"files/cad-page-"+c.n+".jpg",t:"Sheet "+c.n+" · "+c.t}})}
 function openLB(g,i){
   var list=groupList(g);LB={g:g,i:i,list:list,actual:false};
   var el=document.createElement("div");el.className="lb";el.id="lb";el.setAttribute("role","dialog");el.setAttribute("aria-modal","true");
