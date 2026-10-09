@@ -41,6 +41,9 @@ button{font:inherit;color:inherit}
 .count{display:flex;gap:18px;align-items:flex-end}
 .count .k{font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--band-muted)}
 .count .v{font-family:var(--display);font-weight:700;font-size:30px;line-height:1}
+.count{align-items:center}
+.brandlogo{height:58px;width:auto;display:block;margin-left:8px}
+@media (max-width:600px){.brandlogo{height:44px}}
 .tools{display:flex;gap:8px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:6px 11px;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;white-space:nowrap}
 .btn:hover{border-color:var(--accent)}
@@ -486,7 +489,7 @@ function render(){
   var y=window.scrollY;
   app.innerHTML='<header class="band"><div class="band-in"><div style="min-width:0"><div class="eyebrow">Digerati Productions · '+(CREW?"Crew show book":"Dashboard · private")+'</div><h1>'+esc(S.show.client)+' · Chicago</h1><div class="sub"><b>'+esc(S.show.event)+'</b> · '+esc(S.show.venue)+', '+esc(S.show.room)+' · Oct 14–17, 2026</div></div>'+
   '<div class="count"><div><div class="k">Load-in</div><div class="v">'+countTxt+'</div></div>'+(CREW?'':'<div><div class="k">Open items</div><div class="v">'+openCount()+'</div></div>')+
-  '<div class="tools">'+(!CREW&&canWrite===true&&art?'<button class="btn'+(editing?' primary':'')+'" data-edit>'+ICON.edit+(editing?'Editing':'Edit')+'</button>':'')+'</div></div></div></header>'+
+  '<div class="tools">'+(!CREW&&canWrite===true&&art?'<button class="btn'+(editing?' primary':'')+'" data-edit>'+ICON.edit+(editing?'Editing':'Edit')+'</button>':'')+'</div><img class="brandlogo" src="files/digerati-logo-white.png" alt="Digerati Productions"></div></div></header>'+
   '<div class="shell"><nav class="rail" aria-label="Sections">'+navH+'</nav><main id="main">'+R[cur]()+'</main></div>'+
   (editing?'<div class="editbar"><span>'+(dirty?'Unsaved changes — Save updates the page for everyone with the link.':'Edit mode — change any table, then save.')+'</span><span class="tools"><button class="btn" data-cancel>Discard</button><button class="btn primary" data-save>Save</button></span></div>':'');
   window.scrollTo(0,y);
@@ -596,7 +599,7 @@ if(!(window.claude&&window.claude.use)){if(++tries<20)setTimeout(boot,250);retur
 </script>
 <div id="gate" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:var(--bg,#F1F3F7);z-index:100">
 <form id="gate-form" style="width:100%;max-width:380px;background:var(--surface,#fff);border:1px solid var(--line,#DADFE7);border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:14px;font-family:Barlow,Arial,sans-serif;color:var(--ink,#161A2C)">
-<div style="font-family:'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--muted,#5A6272)">Digerati Productions</div>
+<img src="files/digerati-logo-black.png" alt="Digerati Productions" style="height:64px;width:auto;align-self:flex-start">
 <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;line-height:1.05">Nixon Peabody · Chicago<br><span style="font-size:18px;font-weight:600;color:var(--muted,#5A6272)">Crew show book</span></div>
 <label for="gate-pw" style="font-size:14px;font-weight:500">Password</label>
 <input id="gate-pw" type="password" autocomplete="current-password" required style="font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line,#DADFE7);border-radius:6px;background:var(--bg,#F1F3F7);color:inherit">
