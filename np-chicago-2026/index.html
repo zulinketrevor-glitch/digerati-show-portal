@@ -99,6 +99,7 @@ tr:last-child td{border-bottom:0}
 td.q{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;width:56px;font-weight:600}
 td.sub{color:var(--muted);font-size:13px}
 td.mono{white-space:nowrap}
+td.sub{min-width:110px}
 tr.grouprow td{background:var(--surface-2);font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--muted)}
 .tw input,.tw select{width:100%;min-width:90px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:4px 6px;font:inherit;font-size:13px}
 .tw input.qty{min-width:50px;width:60px;text-align:right}
@@ -432,15 +433,16 @@ R.sourcing=function(){
   return h+'</tbody></table></div>';
 };
 R.crew=function(){
-  var h=head("crew","Crew & Travel","Positions from the labor plan. Hotel is client-provided. Confirmation numbers get filled in as they come back.");
-  var cols=[["role","Role"],["name","Name"],["co","Company"],["phone","Phone"],["email","Email"],["arrive","Arrive"],["depart","Depart"],["flight","Flight conf."],["hotel","Hotel conf."],["note","Notes"]];if(editing)cols.splice(3,0,["dept","Dept"]),cols.push(["inote","Internal note"]);
+  var h=head("crew","Crew & Travel","Who\'s on the show, how to reach them, and where everyone is staying.");
+  if((S.hotels||[]).length){h+='<h3>Hotels</h3><div class="grid g2" style="margin-bottom:18px">'+S.hotels.map(function(x){var gq=encodeURIComponent(x.name+' '+x.address);return '<div class="card"><h4>'+esc(x.name)+'</h4><dl class="kv small"><dt>Who</dt><dd>'+esc(x.who)+'</dd><dt>Stay</dt><dd>'+esc(x.detail)+'</dd><dt>Address</dt><dd>'+esc(x.address)+'</dd>'+(x.phone?'<dt>Phone</dt><dd class="mono">'+esc(x.phone)+'</dd>':'')+(x.conf?'<dt>Booking</dt><dd class="mono">'+esc(x.conf)+'</dd>':'')+'</dl><div style="margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+gq+'">'+ICON.open+'Map</a></div></div>'}).join("")+'</div><h3>Crew</h3>'}
+  var cols=[["role","Role"],["name","Name"],["co","Company"],["phone","Phone"],["hotel","Hotel conf."],["email","Email"],["arrive","Arrive"],["depart","Depart"],["flight","Flight conf."],["note","Notes"]];if(!editing&&!S.crew.some(function(r){return r.flight}))cols=cols.filter(function(c){return c[0]!=="flight"});if(editing)cols.splice(3,0,["dept","Dept"]),cols.push(["inote","Internal note"]);
   if(editing){
     h+='<div class="tw"><table><thead><tr>'+cols.map(function(c){return '<th>'+c[1]+'</th>'}).join("")+'<th></th></tr></thead><tbody>'+
     S.crew.map(function(r,i){return '<tr>'+cols.map(function(c){return '<td><input id="c-'+i+'-'+c[0]+'" data-bind="crew.'+i+'.'+c[0]+'" value="'+esc(r[c[0]])+'"></td>'}).join("")+'<td><button class="rm" data-rm="crew.'+i+'">×</button></td></tr>'}).join("")+
     '</tbody></table></div><div style="margin-top:8px"><button class="btn" data-add="crew">+ Add person</button></div>';
   } else {
     h+='<div class="tw"><table><thead><tr>'+cols.map(function(c){return '<th>'+c[1]+'</th>'}).join("")+'</tr></thead><tbody>'+
-    S.crew.map(function(r){return '<tr>'+cols.map(function(c){var v=r[c[0]];var cls=(c[0]==="flight"||c[0]==="hotel"||c[0]==="phone"||c[0]==="email")?' class="mono small"':(c[0]==="note"||c[0]==="co"?' class="sub"':'');if(c[0]==="note"&&!CREW&&r.inote)return '<td class="sub">'+esc(v||'')+' <span class="pill warn">'+esc(r.inote)+'</span></td>';
+    S.crew.map(function(r){return '<tr>'+cols.map(function(c){var v=r[c[0]];var cls=(c[0]==="flight"||c[0]==="hotel"||c[0]==="phone"||c[0]==="email")?' class="mono small"':(c[0]==="note"||c[0]==="co"?' class="sub"':'');if(c[0]==="hotel"&&v&&r.hotelKey&&r.hotelKey!=="main")return '<td class="mono small">'+esc(v)+'<br><span class="muted" style="font-family:var(--body)">Hilton Garden Inn</span></td>';if(c[0]==="note"&&!CREW&&r.inote)return '<td class="sub">'+esc(v||'')+' <span class="pill warn">'+esc(r.inote)+'</span></td>';
       return '<td'+cls+'>'+(v?esc(v):(c[0]==="name"||c[0]==="flight"||c[0]==="hotel"?'<span class="muted">—</span>':''))+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table></div>';
   }
   h+=openBlock(["Travel","Schedule"],"Open travel items");
